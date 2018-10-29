@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [RegressionSuit]" parallel="tests">
+  <test thread-count="2" name="RunningOnChrome(failed)" parallel="classes">
+    <parameter name="node" value="local"/>
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="AER.FMDP_Automation.tests.login.LoginTests">
+        <methods>
+          <include name="login_Failure"/>
+          <include name="login_ChangePassword"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- AER.FMDP_Automation.tests.login.LoginTests -->
+    </classes>
+  </test> <!-- RunningOnChrome(failed) -->
+</suite> <!-- Failed suite [RegressionSuit] -->
