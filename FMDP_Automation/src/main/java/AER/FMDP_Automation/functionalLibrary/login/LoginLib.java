@@ -22,7 +22,7 @@ public class LoginLib
 	
 	
 	/**
-	 * Login to application
+	 * Login to application with url, username, and password
 	 * @param url login page url
 	 * @param username username
 	 * @param password password
@@ -33,12 +33,10 @@ public class LoginLib
 		loginpo.enterUsername(username);
 		loginpo.enterPassword(password);
 		loginpo.clickOnLogin();
-		common.waitAfterLogin();
 	}
 	
 	/**
-	 * Login to application without waiting to finish page load after login
-	 * @param url login page url
+	 * Login to application 
 	 * @param username username
 	 * @param password password
 	 */

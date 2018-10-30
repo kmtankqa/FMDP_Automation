@@ -50,7 +50,7 @@ public class LoginTests
 		navigationlib = new TopNavigationLib(driver);
 		common = new CommonLib(driver);
 		selenium = new SeleniumHelpers(driver);
-	}	
+	}
 	
 
 	@BeforeMethod
@@ -61,47 +61,7 @@ public class LoginTests
 	}
 	
 	
-	/*Test 1 : Verify that user can login/logout/change password successfully*/
-	@Test (priority = 2)
-	public void login_ChangePassword() throws IOException
-	{
-		try 
-		{
-			Reporter.log("Step 1 = Login to application");
-			loginlib.loginToApplication(username, password);
-			if(loginlib.isErrorMessageDispalyed())
-			{
-				loginlib.loginToApplication(username, newpassword);
-				String temp = password;
-				password = newpassword;
-				newpassword = temp;
-			}
-			common.waitAfterLogin();
-			
-			Reporter.log("Step 2 = Verify that user is logged in or not");
-			sfassert.assertEquals(navigationlib.getLoggedInUserName(), name);
-			
-			Reporter.log("Step 3 = Click on profile image and performing change password");
-			navigationlib.changePassword_FillDetailsAndDone(password, newpassword);
-			
-			Reporter.log("Step 4 = Click on profile image and logout, and login as new password");
-			navigationlib.logout();			
-			loginlib.loginToApplication(Constants.LIVE_URL,username, newpassword);
-			
-			Reporter.log("Step 5 = Verify that user is logged in or not");
-			sfassert.assertEquals(navigationlib.getLoggedInUserName(), name);
-			
-			//soft assert
-			sfassert.assertAll();
-		} 
-		catch (AssertionError | Exception e) 
-		{
-			ex.TakeScreenshotAndLogException(e.getMessage());
-		}
-	}
-	
-	
-	/*Test 2 : Verify that user can't login with incorrect credentials */
+	/*Test 1 : Verify that user can't login with incorrect credentials */
 	@Test (priority = 1)
 	public void login_Failure() throws IOException
 	{
@@ -112,6 +72,7 @@ public class LoginTests
 			
 			Reporter.log("Step 2 = Verify the validation message displayed");
 			sfassert.assertEquals(loginlib.getErrorMessage(), errorMessage);
+			common.popup_ClickOnOk();
 			
 			//soft assert
 			sfassert.assertAll();
@@ -123,6 +84,51 @@ public class LoginTests
 		}
 		
 	}
+	
+	
+	/*Test 2 : Verify that user can login/logout/change password successfully*/
+	@Test (priority = 2)
+	public void login_ChangePassword() throws IOException
+	{
+		try 
+		{
+			Reporter.log("Step 1 = Login to application");
+			loginlib.loginToApplication(username, password);
+			
+			/*if(loginlib.isErrorMessageDispalyed())
+			{
+				common.popup_ClickOnOk();
+				loginlib.loginToApplication(username, newpassword);
+				String temp = password;
+				password = newpassword;
+				newpassword = temp;
+			}*/
+			
+			Reporter.log("Step 2 = Verify that user is logged in or not");
+			sfassert.assertEquals(navigationlib.getLoggedInUserName(), name);
+			
+			Reporter.log("Step 3 = Click on change password link and performing change password");
+			navigationlib.changePassword_FillDetailsAndDone(password, newpassword);
+			
+			Reporter.log("Step 4 = Click on logout, and login as new password");
+			navigationlib.logout();			
+			loginlib.loginToApplication(Constants.LIVE_URL,username, newpassword);
+			
+			Reporter.log("Step 6 = Click on change password and reverting to original password");
+			navigationlib.changePassword_FillDetailsAndDone(newpassword, password);
+			
+			Reporter.log("Step 7 = Verify that user is logged in or not");
+			sfassert.assertEquals(navigationlib.getLoggedInUserName(), name);
+			
+			//soft assert
+			sfassert.assertAll();
+		} 
+		catch (AssertionError | Exception e) 
+		{
+			ex.TakeScreenshotAndLogException(e.getMessage());
+		}
+	}
+	
 	
 	@AfterClass
 	public void tearDown() throws Exception

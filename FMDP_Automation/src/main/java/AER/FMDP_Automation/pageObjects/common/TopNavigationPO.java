@@ -35,27 +35,30 @@ public class TopNavigationPO
 	 */ 	
 	
 	//Profile Badge	
-		@FindBy(css="a.topBarUser span")
+		@FindBy(id="lblUser")
 	    public WebElement loggedInUserName;
 		
 		@FindBy(css="a.topBarUser")
 	    public WebElement profileBadge;
 		
 		
-		@FindBy(id="btnChangePassword")
+		@FindBy(linkText="Change Password")
 	    public WebElement changePassword;
 		
 			//Change Password
-			@FindBy(id="current_password")
+			@FindBy(id="txtCurrentPassword")
 		    public WebElement currentPassword;
 			
-			@FindBy(id="new_password")
+			@FindBy(id="txtPassword")
 		    public WebElement newPassword;
 			
-			@FindBy(id="new_password_repeat")
+			@FindBy(id="txtPasswordC")
 		    public WebElement reenternewPassword;
 			
-		@FindBy(id="btnLogout")
+		@FindBy(id="btnChangePassword")
+		public WebElement changePasswordBtn;
+			
+		@FindBy(id="lnkbtnLogout")
 	    public WebElement logout;
 			
 		
@@ -170,19 +173,25 @@ public class TopNavigationPO
 			//Change your password sidebar
 			public void enterValueForCurrentPassword(String password)
 			{
-				selenium.javascript_SetValue(currentPassword,password);
 				currentPassword.clear();
 				currentPassword.sendKeys(password);
 			}
 			
 			public void enterValueForNewPassword(String password)
 			{
+				newPassword.clear();
 				newPassword.sendKeys(password);
 			}
 			
 			public void enterValueForReenterPassword(String password)
 			{
+				reenternewPassword.clear();
 				reenternewPassword.sendKeys(password);
+			}
+			
+			public void clickOnChangePasswordBtn()
+			{
+				changePasswordBtn.click();
 			}
 		
 		public void clickOnLogout()

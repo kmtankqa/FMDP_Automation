@@ -43,7 +43,7 @@ public class LoginPO
 		@FindBy(id="errorbox")
 		private WebElement errorMessage;
 		
-		@FindBy(id="errorbox")
+		@FindBy(css=".formErrorContent")
 		private List<WebElement> fieldValidatons;
 		
 		

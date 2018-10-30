@@ -5,7 +5,6 @@
     <classes>
       <class name="AER.FMDP_Automation.tests.login.LoginTests">
         <methods>
-          <include name="login_Failure"/>
           <include name="login_ChangePassword"/>
           <include name="setUp"/>
           <include name="tearDown"/>

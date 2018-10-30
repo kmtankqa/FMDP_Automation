@@ -25,7 +25,6 @@ public class TopNavigationLib
         topnavigation = new TopNavigationPO(driver);
 	}
 	
-	
 	/**
 	 * Profile Badge - get logged in user's name
 	 * @return text
@@ -75,14 +74,12 @@ public class TopNavigationLib
 	 */
 	public void changePassword_FillDetailsAndDone(String currentpassword,String newpassword) throws InterruptedException
 	{
-		common.waitTillPageLoaded();
-		clickOnProfileBadge();
 		topnavigation.clickOnChangePassword();
 		topnavigation.enterValueForCurrentPassword(currentpassword);
 		topnavigation.enterValueForNewPassword(newpassword);
 		topnavigation.enterValueForReenterPassword(newpassword);
+		topnavigation.clickOnChangePasswordBtn();
 		common.waitTillPageLoaded();
-		common.footer_ClickOnDone();
 	}
 	
 	/**
@@ -91,7 +88,6 @@ public class TopNavigationLib
 	 */
 	public void logout() throws InterruptedException
 	{
-		topnavigation.clickOnProfileBadge();
 		topnavigation.clickOnLogout();
 		java.sleep(2);
 	}

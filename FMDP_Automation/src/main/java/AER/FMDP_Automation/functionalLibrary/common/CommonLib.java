@@ -95,6 +95,22 @@ public class CommonLib
 	}
 	
 	/**
+	 * Popup - Click on Ok button
+	 */
+	public void popup_ClickOnOk()
+	{
+		common.popup_ClickOnOk();
+	}
+	
+	/**
+	 * Popup - Click on Save button
+	 */
+	public void btn_ClickOnSave()
+	{
+		common.btn_ClickOnSave();
+	}
+	
+	/**
 	 * Get text from bottom right pop up
 	 * @return text
 	 */

@@ -61,6 +61,13 @@ public class CommonPO
 		@FindBy(id="task")
 		public WebElement taskBtn;
 		
+		//Ok button
+		@FindBy(css=".errorbox div input[type='button']")
+		public WebElement okBtn;
+		
+		//Save button
+		@FindBy(id="btnSave")
+		public WebElement saveBtn;
 		
 		//Progress bar after login
 		By progressBar= By.id("progressBar");
@@ -138,6 +145,26 @@ public class CommonPO
 			breakBtn.click();
 			waitTillPageLoaded();
 		}
+		
+		public void popup_ClickOnOk()
+		{
+			selenium.waitTillElementIsVisible(okBtn);
+			selenium.waitTillElementIsClickable(okBtn);
+			selenium.pageScrollInView(okBtn);
+			okBtn.click();
+			waitTillPageLoaded();
+		}
+		
+		public void btn_ClickOnSave()
+		{
+			selenium.waitTillElementIsVisible(saveBtn);
+			selenium.waitTillElementIsClickable(saveBtn);
+			selenium.pageScrollInView(saveBtn);
+			saveBtn.click();
+			waitTillPageLoaded();
+		}
+		
+		
 		//Wait till page loaded completely after login 
 		public void waitAfterLogin()
 		{
