@@ -38,30 +38,31 @@ public class GeneralSettingsTests {
 
 	// Test Data
 	private String timeStamp;
-	private String propertyFile = "test-input/tax.properties";
-	private String name_create = JavaHelpers.getPropertyValue(propertyFile, "name_create");
-	private String name;
-	private String status_create = JavaHelpers.getPropertyValue(propertyFile, "status_create");
-	private String purchase_create = JavaHelpers.getPropertyValue(propertyFile, "purchase_create");
-	private String sale_create = JavaHelpers.getPropertyValue(propertyFile, "sale_create");
-	private String service_create = JavaHelpers.getPropertyValue(propertyFile, "service_create");
-	private String product_create = JavaHelpers.getPropertyValue(propertyFile, "product_create");
-	private String sundry_create = JavaHelpers.getPropertyValue(propertyFile, "sundry_create");
-	private String expense_create = JavaHelpers.getPropertyValue(propertyFile, "expense_create");
-	private String ratename_update;
-	private String ratename_create = JavaHelpers.getPropertyValue(propertyFile, "ratename_create");
-	private String ratepercent_create = JavaHelpers.getPropertyValue(propertyFile, "ratepercent_create");
-	private String effectivedate_create = JavaHelpers.getPropertyValue(propertyFile, "effectivedate_create");
-
-	private String purchase_update = JavaHelpers.getPropertyValue(propertyFile, "purchase_update");
-	private String sale_update = JavaHelpers.getPropertyValue(propertyFile, "sale_update");
-	private String service_update = JavaHelpers.getPropertyValue(propertyFile, "service_update");
-	private String product_update = JavaHelpers.getPropertyValue(propertyFile, "product_update");
-	private String sundry_update = JavaHelpers.getPropertyValue(propertyFile, "sundry_update");
-	private String expense_update = JavaHelpers.getPropertyValue(propertyFile, "expense_update");
-	private String ratepercent_update = JavaHelpers.getPropertyValue(propertyFile, "ratepercent_update");
-	private String effectivedate_verify = JavaHelpers.getPropertyValue(propertyFile, "effectivedate_verify");
-
+	private String propertyFile = "test-input/settings.properties";
+	private String sftpKeyPath = Constants.currentDir + Constants.uploadFilePath;
+	private String sftpFileName = JavaHelpers.getPropertyValue(propertyFile, "sftpFileName");
+	private String smtpserver_add = JavaHelpers.getPropertyValue(propertyFile, "smtpserver_add");
+	private String smtpusername_add = JavaHelpers.getPropertyValue(propertyFile, "smtpusername_add");
+	private String smtppassword_add = JavaHelpers.getPropertyValue(propertyFile, "smtppassword_add");
+	private String smtpport_add = JavaHelpers.getPropertyValue(propertyFile, "smtpport_add");
+	
+	private String smtpserver_update = JavaHelpers.getPropertyValue(propertyFile, "smtpserver_update");
+	private String smtpusername_update = JavaHelpers.getPropertyValue(propertyFile, "smtpusername_update");
+	private String smtppassword_update = JavaHelpers.getPropertyValue(propertyFile, "smtppassword_update");
+	private String smtpport_update = JavaHelpers.getPropertyValue(propertyFile, "smtpport_update");
+	
+	private String fromemail_add = JavaHelpers.getPropertyValue(propertyFile, "fromemail_add");
+	private String toemail_add = JavaHelpers.getPropertyValue(propertyFile, "toemail_add");
+	private String generatededfpath_add = JavaHelpers.getPropertyValue(propertyFile, "generatededfpath_add");
+	private String dataretentionday_add = JavaHelpers.getPropertyValue(propertyFile, "dataretentionday_add");
+	private String confirmationmessage = JavaHelpers.getPropertyValue(propertyFile, "confirmationmessage");
+	
+	private String fromemail_update = JavaHelpers.getPropertyValue(propertyFile, "fromemail_update");
+	private String toemail_update = JavaHelpers.getPropertyValue(propertyFile, "toemail_update");
+	private String generatededfpath_update = JavaHelpers.getPropertyValue(propertyFile, "generatededfpath_update");
+	private String dataretentionday_update = JavaHelpers.getPropertyValue(propertyFile, "dataretentionday_update");
+	
+	
 	@BeforeClass
 	@Parameters({ "node", "browser" })
 	public void setUp(@Optional("local") String node, @Optional("chrome") String browser) throws Exception {
@@ -82,192 +83,151 @@ public class GeneralSettingsTests {
 		ex = new ExceptionHandler(driver);
 	}
 
-	/* Test 1 : Verify that user can add tax category successfully */
+	/* Test 1 : Verify that user can add general settings details successfully */
 	@Test(priority = 1)
-	public void tax_Create() throws IOException {
+	public void generalSetting_Add() throws IOException {
 		try {
 			// Step 1 - Navigating and Logging in to Live Application
-			Reporter.log("Step 1 = Login to application at : " + Constants.LIVE_URL
-					+ " and loging in with correct credentails");
+			Reporter.log("Step 1 = Login to application at : " + Constants.LIVE_URL + " and loging in with correct credentails");
 			loginlib.loginToApplication(Constants.LIVE_URL, Constants.LIVE_USERNAME, Constants.LIVE_PASSWORD);
 
-			// Step 2- Opening Menu & Navigating to General settings > Tax page
-			Reporter.log("Step 2 = Opening Menu & Navigating to General settings > Tax page");
-			navigationlib.clickOnMenuItem("General settings");
-			navigationlib.menu_ClickOnTaxTile();
+			// Step 2- Opening Menu & Navigating to Settings > General Settings
+			Reporter.log("Step 2 = Opening Menu & Navigating to Settings > General Settings");
+			//navigationlib.clickOnMenuItem("General settings");
+			navigationlib.menu_ClickOnGeneralSetting();
 
-			// Step 3- On Tax setup page, Click on +NEW button, adding details, click on
-			// Done button
-			Reporter.log("Step 3 = On Tax setup page, Click on +NEW button, adding details, click on Done button");
-			common.footer_ClickOnNewButton();
-			name = name_create + timeStamp;
-			generalsettingadd.generalSetting_Add(smtpserver, smtpusername, smtppassword, smtpport, fromemail, toemail, generatededfpath, dataretentionday, sftpkeypath, confirmationmessage);
+			// Step 3- On General Settings page, adding details, click on Save button
+			Reporter.log("Step 3 = On General Settings page, adding details, click on Save button");
+			generalsettingadd.generalSetting_Add(smtpserver_add, smtpusername_add, smtppassword_add, smtpport_add, fromemail_add, toemail_add, generatededfpath_add, dataretentionday_add, sftpKeyPath + sftpFileName, confirmationmessage);
+			common.popup_ClickOnSuccessOk();
 
-			// Step 4 = Searching for added tax and verifying that it has correct details
-			Reporter.log("Step 4 = Searching for added tax and verifying that it has correct details");
-			taxsearch.search_SearchTaxAndClick(name);
+			// Step 4 = Searching for added general settings details and verifying that it has correct details
+			Reporter.log("Step 4 = Searching for added general settings details and verifying that it has correct details");
+			navigationlib.link_ClickOnHome();
+			navigationlib.menu_ClickOnGeneralSetting();		
+			
+			//SMTP Configuration section :
 
-			// Details section :
+				// Verifying SMTP server
+				expected = smtpserver_add;
+				actual = generalsettingadd.getSmtpConfigurationSectionData(1);
+				sfassert.assertEquals(actual, expected);
+	
+				// Verifying SMTP username
+				expected = smtpusername_add;
+				actual = generalsettingadd.getSmtpConfigurationSectionData(2);
+				sfassert.assertEquals(actual, expected);
+	
+				// Verifying SMTP password
+				expected = smtppassword_add;
+				actual = generalsettingadd.getSmtpConfigurationSectionData(3);
+				sfassert.assertEquals(actual, expected);
+	
+				// Verifying SMTP port
+				expected = smtpport_add;
+				actual = generalsettingadd.getSmtpConfigurationSectionData(4);
+				sfassert.assertEquals(actual, expected);
 
-			// Verifying name
-			expected = "name " + name;
-			actual = taxsearch.getDetailsSectionData(1);
-			sfassert.assertEquals(actual, expected);
+			//General Details section :
 
-			// Verifying status
-			expected = "status " + status_create;
-			actual = taxsearch.getDetailsSectionData(2);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying purchase
-			expected = "applies to purchases " + purchase_create;
-			actual = taxsearch.getDetailsSectionData(3);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying sale
-			expected = "applies to sales " + sale_create;
-			actual = taxsearch.getDetailsSectionData(4);
-			sfassert.assertEquals(actual, expected);
-
-			// Applicable To section :
-
-			// Verifying service
-			expected = "services" + service_create;
-			actual = taxsearch.getApplicableToSectionData(1);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying product
-			expected = "products" + product_create;
-			actual = taxsearch.getApplicableToSectionData(2);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying sundry
-			expected = "sundries" + sundry_create;
-			actual = taxsearch.getApplicableToSectionData(3);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying expenses
-			expected = "expenses" + expense_create;
-			actual = taxsearch.getApplicableToSectionData(4);
-			sfassert.assertEquals(actual, expected);
-
-			// Current Rates section :
-
-			// Verifying rate name
-			expected = ratename_create;
-			actual = taxsearch.getCurrentRateData(1, 1);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying rate percent
-			expected = ratepercent_create + ".00 %";
-			actual = taxsearch.getCurrentRateData(1, 2);
-			sfassert.assertEquals(actual, expected);
-
+				// Verifying From Email
+				expected = fromemail_add;
+				actual = generalsettingadd.getGeneralDetailsSectionData(2);
+				sfassert.assertEquals(actual, expected);
+	
+				// Verifying To Email
+				expected = toemail_add;
+				actual = generalsettingadd.getGeneralDetailsSectionData(3);
+				sfassert.assertEquals(actual, expected);
+	
+				// Verifying Generated EDF Path
+				expected = generatededfpath_add;
+				actual = generalsettingadd.getGeneralDetailsSectionData(4);
+				sfassert.assertEquals(actual, expected);
+	
+				// Verifying Data Retention Days
+				expected = dataretentionday_add;
+				actual = generalsettingadd.getGeneralDetailsSectionData(5);
+				sfassert.assertEquals(actual, expected);
+				
+				
 			// soft assert
 			sfassert.assertAll();
-		} catch (AssertionError | Exception e) {
+			
+		}
+		catch (AssertionError | Exception e)
+		{
 			ex.TakeScreenshotAndLogException(e.getMessage());
 		}
 
 	}
 
-	/* Test 2 : Verify that user can edit tax category successfully */
-	@Test(priority = 2, dependsOnMethods = { "tax_Create" })
-	public void tax_Update() throws IOException {
+	
+	/*	Test 2 : Verify that user can edit tax category successfully */ 
+	@Test(priority = 2, dependsOnMethods = { "generalSetting_Add" })
+	public void generalSetting_Update() throws IOException {
 		try {
-			// Step 1 = Editing added tax category
-			Reporter.log("Step 1 = Editing tax category");
-
+			// Step 1 = Editing added generate settings details
+			Reporter.log("Step 1 = Editing added generate settings details");
 			selenium.refreshPage();
-			common.waitTillPageLoaded();
-			taxsearch.search_SearchTaxAndClick(name);
-			taxsearch.clickOnEditIcon();
-			name = name_create + timeStamp;
-			ratename_update = ratename_create + "_edited";
-			taxadd.tax_Add(name, status_create, purchase_update, sale_update, service_update, product_update,
-					sundry_update, expense_update, effectivedate_create, ratename_update, ratepercent_update);
+			generalsettingadd.generalSetting_Add(smtpserver_update, smtpusername_update, smtppassword_update, smtpport_update, fromemail_update, toemail_update, generatededfpath_update, dataretentionday_update, sftpKeyPath + sftpFileName, confirmationmessage);
+			common.popup_ClickOnSuccessOk();
+			
+			// Step 2 = Searching for edited general settings details and verifying that it has correct
+			Reporter.log("Step 2 = Searching for edited general settings details and verifying that it has correct");
+			navigationlib.link_ClickOnHome();
+			navigationlib.menu_ClickOnGeneralSetting();		
+			
+			//SMTP Configuration section :
 
-			// Step 2 = Searching for edited tax category and verifying that it has correct
-			// details
-			Reporter.log("Step 2 = Searching for edited tax category and verifying that it has correct details");
-			taxsearch.search_SearchTaxAndClick(name);
+				// Verifying SMTP server
+				expected = smtpserver_update;
+				actual = generalsettingadd.getSmtpConfigurationSectionData(1);
+				sfassert.assertEquals(actual, expected);
+	
+				// Verifying SMTP username
+				expected = smtpusername_update;
+				actual = generalsettingadd.getSmtpConfigurationSectionData(2);
+				sfassert.assertEquals(actual, expected);
+	
+				// Verifying SMTP password
+				expected = smtppassword_update;
+				actual = generalsettingadd.getSmtpConfigurationSectionData(3);
+				sfassert.assertEquals(actual, expected);
+	
+				// Verifying SMTP port
+				expected = smtpport_update;
+				actual = generalsettingadd.getSmtpConfigurationSectionData(4);
+				sfassert.assertEquals(actual, expected);
 
-			// Details section :
+			//General Details section :
 
-			// Verifying name
-			expected = "name " + name;
-			actual = taxsearch.getDetailsSectionData(1);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying status
-			expected = "status " + status_create;
-			actual = taxsearch.getDetailsSectionData(2);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying purchase
-			expected = "applies to purchases " + purchase_update;
-			actual = taxsearch.getDetailsSectionData(3);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying sale
-			expected = "applies to sales " + sale_update;
-			actual = taxsearch.getDetailsSectionData(4);
-			sfassert.assertEquals(actual, expected);
-
-			// Applicable To section :
-
-			// Verifying service
-			expected = "services" + service_update;
-			actual = taxsearch.getApplicableToSectionData(1);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying product
-			expected = "products" + product_update;
-			actual = taxsearch.getApplicableToSectionData(2);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying sundry
-			expected = "sundries" + sundry_update;
-			actual = taxsearch.getApplicableToSectionData(3);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying expenses
-			expected = "expenses" + expense_update;
-			actual = taxsearch.getApplicableToSectionData(4);
-			sfassert.assertEquals(actual, expected);
-
-			// Current Rates section :
-
-			// Verifying rate name
-			expected = ratename_create;
-			actual = taxsearch.getCurrentRateData(1, 1);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying rate percent
-			expected = ratepercent_create + ".00 %";
-			actual = taxsearch.getCurrentRateData(1, 2);
-			sfassert.assertEquals(actual, expected);
-
-			// Future Rates section :
-
-			// Verifying effective from date
-			expected = "effective from " + effectivedate_verify;
-			actual = taxsearch.getFutureRateSectionData(1);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying future rate name
-			expected = ratename_update;
-			actual = taxsearch.getFutureRateData(2, 1);
-			sfassert.assertEquals(actual, expected);
-
-			// Verifying future rate percent
-			expected = ratepercent_update + ".00 %";
-			actual = taxsearch.getFutureRateData(2, 2);
-			sfassert.assertEquals(actual, expected);
+				// Verifying From Email
+				expected = fromemail_update;
+				actual = generalsettingadd.getGeneralDetailsSectionData(2);
+				sfassert.assertEquals(actual, expected);
+	
+				// Verifying To Email
+				expected = toemail_update;
+				actual = generalsettingadd.getGeneralDetailsSectionData(3);
+				sfassert.assertEquals(actual, expected);
+	
+				// Verifying Generated EDF Path
+				expected = generatededfpath_update;
+				actual = generalsettingadd.getGeneralDetailsSectionData(4);
+				sfassert.assertEquals(actual, expected);
+	
+				// Verifying Data Retention Days
+				expected = dataretentionday_update;
+				actual = generalsettingadd.getGeneralDetailsSectionData(5);
+				sfassert.assertEquals(actual, expected);
+			
 
 			// soft assert
 			sfassert.assertAll();
-		} catch (AssertionError | Exception e) {
+		}
+		catch (AssertionError | Exception e)
+		{
 			ex.TakeScreenshotAndLogException(e.getMessage());
 		}
 	}

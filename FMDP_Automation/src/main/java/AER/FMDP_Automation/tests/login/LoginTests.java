@@ -72,7 +72,7 @@ public class LoginTests
 			
 			Reporter.log("Step 2 = Verify the validation message displayed");
 			sfassert.assertEquals(loginlib.getErrorMessage(), errorMessage);
-			common.popup_ClickOnOk();
+			common.popup_ClickOnErrorOk();
 			
 			//soft assert
 			sfassert.assertAll();

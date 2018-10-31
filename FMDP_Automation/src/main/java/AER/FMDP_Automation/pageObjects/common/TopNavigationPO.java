@@ -3,6 +3,7 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
@@ -17,6 +18,8 @@ public class TopNavigationPO
 	SeleniumHelpers selenium;
 	CommonPO common;
 	JavaHelpers java;
+	Actions action;
+
 	
 	public TopNavigationPO(WebDriver driver)
 	{	 
@@ -24,6 +27,7 @@ public class TopNavigationPO
         selenium = new SeleniumHelpers(driver);
         common = new CommonPO(driver);
         java = new JavaHelpers();
+        action = new Actions(driver);
         //This initElements method will create all WebElements
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, Constants.PAGEFACTORY_WAIT_DURATION), this);
 	}
@@ -34,6 +38,20 @@ public class TopNavigationPO
 	 * @FindBy can accept tagName, partialLinkText, name, linkText, id, css, className, xpath as attributes.
 	 */ 	
 	
+	//Menu Items
+	
+		@FindBy(css=".topnav> ul > li:nth-of-type(1) > a")
+		public WebElement settings;
+	
+		@FindBy(css=".topnav> ul > li:nth-of-type(1) > ul > li:nth-of-type(1) > a")
+		public WebElement generalSettingMenu;
+	
+	
+	//Home Page banner images
+		@FindBy(id="MainContent_imgbtnSettings")
+		public WebElement settingsBannerImage;
+		
+	
 	//Profile Badge	
 		@FindBy(id="lblUser")
 	    public WebElement loggedInUserName;
@@ -41,6 +59,8 @@ public class TopNavigationPO
 		@FindBy(css="a.topBarUser")
 	    public WebElement profileBadge;
 		
+		@FindBy(linkText="Home")
+	    public WebElement home;
 		
 		@FindBy(linkText="Change Password")
 	    public WebElement changePassword;
@@ -164,6 +184,12 @@ public class TopNavigationPO
 			profileBadge.click();
 		}
 		
+		public void clickOnHome()
+		{
+			home.click();
+			selenium.waitTillElementIsVisible(settingsBannerImage);
+		}
+		
 		public void clickOnChangePassword()
 		{
 			changePassword.click();
@@ -244,6 +270,19 @@ public class TopNavigationPO
 		}
 
 
+	//Settings
+		
+		//Click On General Settings
+		public void menu_ClickOnGeneralSetting()
+		{
+	        action.moveToElement(settings).build().perform();
+			generalSettingMenu.click();
+		}
+		
+		
+		
+		
+		
 	//Operations
 		
         //Click On Appointment Book

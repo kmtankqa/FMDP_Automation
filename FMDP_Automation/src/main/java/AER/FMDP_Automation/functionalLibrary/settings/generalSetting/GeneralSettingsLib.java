@@ -52,5 +52,30 @@ public class GeneralSettingsLib
 		generalsettingadd.uploadSftpKey(sftpkeypath, confirmationmessage);
 		help.btn_ClickOnSave();
 	}
+	
+	
 
+	//Search : SMTP Configuration section
+		/**
+		 * Read SMTP Configuration section data row wise including labels
+		 * @param row
+		 * @return data for given row
+		 */
+		public String getSmtpConfigurationSectionData(int row)
+		{
+			return generalsettingadd.getSmtpConfigurationSectionData(row);
+		}
+		
+	//Search : General Details section
+		/**
+		 * Read General Details section data row wise including labels
+		 * @param row
+		 * @return data for given row
+		 */
+		public String getGeneralDetailsSectionData(int row)
+		{
+			return generalsettingadd.getGeneralDetailsSectionData(row);
+		}
+		
+		
 }

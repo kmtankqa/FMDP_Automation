@@ -2,36 +2,30 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
     <line>
-      <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with incorrect credentails]]>
+      <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with correct credentails]]>
     </line>
     <line>
-      <![CDATA[Step 2 = Verify the validation message displayed]]>
+      <![CDATA[Step 2 = Opening Menu & Navigating to Settings > General Settings]]>
     </line>
     <line>
-      <![CDATA[Step 1 = Login to application]]>
+      <![CDATA[Step 3 = On General Settings page, adding details, click on Save button]]>
     </line>
     <line>
-      <![CDATA[Step 2 = Verify that user is logged in or not]]>
+      <![CDATA[Step 4 = Searching for added general settings details and verifying that it has correct details]]>
     </line>
     <line>
-      <![CDATA[Step 3 = Click on change password link and performing change password]]>
+      <![CDATA[Step 1 = Editing added generate settings details]]>
     </line>
     <line>
-      <![CDATA[Step 4 = Click on logout, and login as new password]]>
-    </line>
-    <line>
-      <![CDATA[Step 6 = Click on change password and reverting to original password]]>
-    </line>
-    <line>
-      <![CDATA[Step 7 = Verify that user is logged in or not]]>
+      <![CDATA[Step 2 = Searching for edited general settings details and verifying that it has correct]]>
     </line>
   </reporter-output>
-  <suite name="RegressionSuit" duration-ms="65738" started-at="2018-10-30T13:17:20Z" finished-at="2018-10-30T13:18:26Z">
+  <suite name="RegressionSuit" duration-ms="25582" started-at="2018-10-31T15:18:12Z" finished-at="2018-10-31T15:18:38Z">
     <groups>
     </groups>
-    <test name="RunningOnChrome" duration-ms="65738" started-at="2018-10-30T13:17:20Z" finished-at="2018-10-30T13:18:26Z">
-      <class name="AER.FMDP_Automation.tests.login.LoginTests">
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@7d9d1a19]" name="setUp" is-config="true" duration-ms="7436" started-at="2018-10-30T13:17:20Z" finished-at="2018-10-30T13:17:28Z">
+    <test name="RunningOnChrome" duration-ms="25582" started-at="2018-10-31T15:18:12Z" finished-at="2018-10-31T15:18:38Z">
+      <class name="AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@7d9d1a19]" name="setUp" is-config="true" duration-ms="7012" started-at="2018-10-31T15:18:12Z" finished-at="2018-10-31T15:18:19Z">
           <params>
             <param index="0">
               <value>
@@ -47,51 +41,45 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@7d9d1a19]" name="beforeMethod" is-config="true" duration-ms="5" started-at="2018-10-30T13:17:28Z" finished-at="2018-10-30T13:17:28Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@7d9d1a19]" name="beforeMethod" is-config="true" duration-ms="8" started-at="2018-10-31T15:18:19Z" finished-at="2018-10-31T15:18:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="login_Failure()[pri:1, instance:AER.FMDP_Automation.tests.login.LoginTests@7d9d1a19]" name="login_Failure" duration-ms="7884" started-at="2018-10-30T13:17:28Z" finished-at="2018-10-30T13:17:35Z">
+        <test-method status="PASS" signature="generalSetting_Add()[pri:1, instance:AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@7d9d1a19]" name="generalSetting_Add" duration-ms="8127" started-at="2018-10-31T15:18:19Z" finished-at="2018-10-31T15:18:28Z">
           <reporter-output>
             <line>
-              <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with incorrect credentails]]>
+              <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with correct credentails]]>
             </line>
             <line>
-              <![CDATA[Step 2 = Verify the validation message displayed]]>
+              <![CDATA[Step 2 = Opening Menu & Navigating to Settings > General Settings]]>
+            </line>
+            <line>
+              <![CDATA[Step 3 = On General Settings page, adding details, click on Save button]]>
+            </line>
+            <line>
+              <![CDATA[Step 4 = Searching for added general settings details and verifying that it has correct details]]>
             </line>
           </reporter-output>
-        </test-method> <!-- login_Failure -->
-        <test-method status="PASS" signature="login_ChangePassword()[pri:2, instance:AER.FMDP_Automation.tests.login.LoginTests@7d9d1a19]" name="login_ChangePassword" duration-ms="49560" started-at="2018-10-30T13:17:35Z" finished-at="2018-10-30T13:18:25Z">
+        </test-method> <!-- generalSetting_Add -->
+        <test-method status="PASS" signature="generalSetting_Update()[pri:2, instance:AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@7d9d1a19]" name="generalSetting_Update" duration-ms="9558" started-at="2018-10-31T15:18:28Z" depends-on-methods="AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests.generalSetting_Add" finished-at="2018-10-31T15:18:37Z">
           <reporter-output>
             <line>
-              <![CDATA[Step 1 = Login to application]]>
+              <![CDATA[Step 1 = Editing added generate settings details]]>
             </line>
             <line>
-              <![CDATA[Step 2 = Verify that user is logged in or not]]>
-            </line>
-            <line>
-              <![CDATA[Step 3 = Click on change password link and performing change password]]>
-            </line>
-            <line>
-              <![CDATA[Step 4 = Click on logout, and login as new password]]>
-            </line>
-            <line>
-              <![CDATA[Step 6 = Click on change password and reverting to original password]]>
-            </line>
-            <line>
-              <![CDATA[Step 7 = Verify that user is logged in or not]]>
+              <![CDATA[Step 2 = Searching for edited general settings details and verifying that it has correct]]>
             </line>
           </reporter-output>
-        </test-method> <!-- login_ChangePassword -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@7d9d1a19]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-10-30T13:17:35Z" finished-at="2018-10-30T13:17:35Z">
+        </test-method> <!-- generalSetting_Update -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@7d9d1a19]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-10-31T15:18:28Z" finished-at="2018-10-31T15:18:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@7d9d1a19]" name="tearDown" is-config="true" duration-ms="797" started-at="2018-10-30T13:18:25Z" finished-at="2018-10-30T13:18:26Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@7d9d1a19]" name="tearDown" is-config="true" duration-ms="801" started-at="2018-10-31T15:18:37Z" finished-at="2018-10-31T15:18:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- AER.FMDP_Automation.tests.login.LoginTests -->
+      </class> <!-- AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests -->
     </test> <!-- RunningOnChrome -->
   </suite> <!-- RegressionSuit -->
 </testng-results>

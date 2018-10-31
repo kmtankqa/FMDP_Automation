@@ -61,13 +61,18 @@ public class CommonPO
 		@FindBy(id="task")
 		public WebElement taskBtn;
 		
-		//Ok button
+		//Ok button on error popup
 		@FindBy(css=".errorbox div input[type='button']")
-		public WebElement okBtn;
+		public WebElement errorOkBtn;
 		
+		//Ok button on success popup
+		@FindBy(css=".successbox div input[type='button']")
+		public WebElement successOkBtn;
+				
 		//Save button
 		@FindBy(id="btnSave")
 		public WebElement saveBtn;
+		
 		
 		//Progress bar after login
 		By progressBar= By.id("progressBar");
@@ -146,13 +151,20 @@ public class CommonPO
 			waitTillPageLoaded();
 		}
 		
-		public void popup_ClickOnOk()
+		public void popup_ClickOnErrorOk()
 		{
-			selenium.waitTillElementIsVisible(okBtn);
-			selenium.waitTillElementIsClickable(okBtn);
-			selenium.pageScrollInView(okBtn);
-			okBtn.click();
-			waitTillPageLoaded();
+			selenium.waitTillElementIsVisible(errorOkBtn);
+			selenium.waitTillElementIsClickable(errorOkBtn);
+			selenium.pageScrollInView(errorOkBtn);
+			errorOkBtn.click();
+		}
+		
+		public void popup_ClickOnSuccessOk()
+		{
+			selenium.waitTillElementIsVisible(successOkBtn);
+			selenium.waitTillElementIsClickable(successOkBtn);
+			selenium.pageScrollInView(successOkBtn);
+			successOkBtn.click();
 		}
 		
 		public void btn_ClickOnSave()
@@ -160,12 +172,11 @@ public class CommonPO
 			selenium.waitTillElementIsVisible(saveBtn);
 			selenium.waitTillElementIsClickable(saveBtn);
 			selenium.pageScrollInView(saveBtn);
-			saveBtn.click();
-			waitTillPageLoaded();
+			saveBtn.click();	
 		}
 		
 		
-		//Wait till page loaded completely after login 
+		//Wait till page loaded completely after login
 		public void waitAfterLogin()
 		{
 			selenium.waitTillElementIsPresent(progressBar);

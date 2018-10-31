@@ -5,7 +5,8 @@ public class Constants
 	public static final String PROPERTYFILE="test-input/constants.properties";	
 	
 	//File download location
-	public static final String downloadFilePath = "\\download\\";
+	public static final String downloadFilePath = "\\lib\\download\\";
+	public static final String uploadFilePath = "\\lib\\upload\\";
 	public static final String currentDir = System.getProperty("user.dir");
 	
 	//Environment

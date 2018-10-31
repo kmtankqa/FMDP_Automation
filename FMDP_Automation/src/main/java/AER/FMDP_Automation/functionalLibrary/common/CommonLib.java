@@ -95,11 +95,19 @@ public class CommonLib
 	}
 	
 	/**
-	 * Popup - Click on Ok button
+	 * Popup - Click on Error popup Ok button
 	 */
-	public void popup_ClickOnOk()
+	public void popup_ClickOnErrorOk()
 	{
-		common.popup_ClickOnOk();
+		common.popup_ClickOnErrorOk();
+	}
+	
+	/**
+	 * Popup - Click on Success popup Ok button
+	 */
+	public void popup_ClickOnSuccessOk()
+	{
+		common.popup_ClickOnSuccessOk();
 	}
 	
 	/**

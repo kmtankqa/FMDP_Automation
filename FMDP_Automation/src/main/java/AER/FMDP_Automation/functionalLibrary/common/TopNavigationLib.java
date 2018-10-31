@@ -113,7 +113,33 @@ public class TopNavigationLib
 		topnavigation.clickOnMenuItem(menuitemname);		
 	}
 	
-			
+	
+	//Top Navigation Links
+	
+	/**
+	 * Click on Home link
+	 */
+	public void link_ClickOnHome()
+	{
+		topnavigation.clickOnHome();
+	}
+	
+	
+	
+	//Settings
+	
+	/**
+	 * Click On General Settings Menu
+	 */
+	public void menu_ClickOnGeneralSetting()
+	{
+		topnavigation.menu_ClickOnGeneralSetting();
+	}
+	
+	
+	
+	
+	
 	//Operations
 	
 	/**

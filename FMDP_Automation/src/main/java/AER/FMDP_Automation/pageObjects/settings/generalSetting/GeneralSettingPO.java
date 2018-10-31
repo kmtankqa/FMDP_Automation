@@ -1,4 +1,5 @@
 package AER.FMDP_Automation.pageObjects.settings.generalSetting;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -131,5 +132,23 @@ public class GeneralSettingPO
 			successOkBtn.click();
 			selenium.waitTillElementIsNOTVisible(uploadConfirmation);
 		}
+		
+	
+	//Search General Setting details
+		
+		//SMTP Configuration section :
+		public String getSmtpConfigurationSectionData(int row)
+		{
+			String cssSelector = ".right-col > div > table:nth-of-type(1) > tbody > tr:nth-of-type(" + row + ") > td > input";
+			return selenium.waitTillElementIsVisible(By.cssSelector(cssSelector)).getAttribute("value");
+		}
+		
+		//General Details section :
+		public String getGeneralDetailsSectionData(int row)
+		{
+			String cssSelector = ".right-col > div > table:nth-of-type(2) > tbody > tr:nth-of-type(" + row + ") > td > input";
+			return selenium.waitTillElementIsVisible(By.cssSelector(cssSelector)).getAttribute("value");
+		}
+		
 		
 }
