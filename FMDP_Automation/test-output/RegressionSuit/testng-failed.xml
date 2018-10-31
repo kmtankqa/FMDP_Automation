@@ -5,14 +5,14 @@
     <parameter name="node" value="local"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="AER.FMDP_Automation.tests.login.LoginTests">
+      <class name="AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests">
         <methods>
-          <include name="login_ChangePassword"/>
+          <include name="beforeMethod"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="beforeMethod"/>
+          <include name="generalSetting_Add"/>
         </methods>
-      </class> <!-- AER.FMDP_Automation.tests.login.LoginTests -->
+      </class> <!-- AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests -->
     </classes>
   </test> <!-- RunningOnChrome(failed) -->
 </suite> <!-- Failed suite [RegressionSuit] -->
