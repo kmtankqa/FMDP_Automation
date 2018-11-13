@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [RegressionSuit]" parallel="tests">
-  <test thread-count="2" name="RunningOnChrome(failed)" parallel="classes">
-    <parameter name="node" value="local"/>
-    <parameter name="browser" value="chrome"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests">
+      <class name="AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests">
         <methods>
           <include name="beforeMethod"/>
-          <include name="setUp"/>
+          <include name="mnSetting_Update"/>
+          <include name="mnSetting_Add"/>
           <include name="tearDown"/>
-          <include name="generalSetting_Add"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests -->
+      </class> <!-- AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests -->
     </classes>
-  </test> <!-- RunningOnChrome(failed) -->
-</suite> <!-- Failed suite [RegressionSuit] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

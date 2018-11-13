@@ -137,7 +137,13 @@ public class TopNavigationLib
 	}
 	
 	
-	
+	/**
+	 * Click On M & N Settings Menu
+	 */
+	public void menu_ClickOnMnSetting()
+	{
+		topnavigation.menu_ClickOnMnSetting();
+	}
 	
 	
 	//Operations

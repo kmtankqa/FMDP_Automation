@@ -29,7 +29,6 @@ public class GeneralSettingsTests {
 	private TopNavigationLib navigationlib;
 	private CommonLib common;
 	private SeleniumHelpers selenium;
-	private JavaHelpers javahelp;
 	private GeneralSettingsLib generalsettingadd;
 	private SoftAssert sfassert;
 	private String expected;
@@ -37,7 +36,6 @@ public class GeneralSettingsTests {
 	private ExceptionHandler ex;
 
 	// Test Data
-	private String timeStamp;
 	private String propertyFile = "test-input/settings.properties";
 	private String sftpKeyPath = Constants.currentDir + Constants.uploadFilePath;
 	private String sftpFileName = JavaHelpers.getPropertyValue(propertyFile, "sftpFileName");
@@ -72,14 +70,12 @@ public class GeneralSettingsTests {
 		navigationlib = new TopNavigationLib(driver);
 		common = new CommonLib(driver);
 		selenium = new SeleniumHelpers(driver);
-		javahelp = new JavaHelpers();
 		generalsettingadd = new GeneralSettingsLib(driver);
 	}
 
 	@BeforeMethod
 	public void beforeMethod() {
 		sfassert = new SoftAssert();
-		timeStamp = javahelp.timeStamp();
 		ex = new ExceptionHandler(driver);
 	}
 

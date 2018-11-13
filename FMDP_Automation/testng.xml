@@ -6,8 +6,7 @@
 	  <parameter name="node" value="local" /> 		<!-- node value can be :  local or node url -->
 	  <parameter name="browser" value="chrome" />	<!-- browser value can be : chrome ,ie ,firefox -->
 	    <classes>
-		  <!--  <class name="AER.FMDP_Automation.tests.login.LoginTests"/> 
-	       <class name="au.com.shortcuts.live.tests.rosters.RostersActivityTests"/> 
+		  <!--  <class name="au.com.shortcuts.live.tests.rosters.RostersActivityTests"/> 
 	       <class name="au.com.shortcuts.live.tests.employee.EmployeeTests"/>
 	       <class name="au.com.shortcuts.live.tests.product.ProductTests"/>
 	       <class name="au.com.shortcuts.live.tests.service.ServiceTests"/>
@@ -26,7 +25,10 @@
 	       <class name="au.com.shortcuts.live.tests.appointment.AppointmentBookTests"/>
 	       <class name="au.com.shortcuts.live.tests.rosters.RostersTests"/>
 	       <class name="au.com.shortcuts.live.tests.tools.ClientImportTests"/> -->
+	       
+	       <class name="AER.FMDP_Automation.tests.login.LoginTests"/>
 	       <class name="AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests"/>
+	       <class name="AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests"/>
 	    </classes>
   </test>
   
