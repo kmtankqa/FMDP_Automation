@@ -40,6 +40,7 @@ public class LoginTests
 	private String name = JavaHelpers.getPropertyValue(propertyFile,"name_" + Constants.Env);
 	private String errorMessage = JavaHelpers.getPropertyValue(propertyFile,"loginErrorMessage");
 	
+	
 	@BeforeClass
 	@Parameters({"node", "browser"})
 	public void setUp(@Optional("local") String node, @Optional("chrome") String browser) throws Exception
@@ -95,15 +96,6 @@ public class LoginTests
 			Reporter.log("Step 1 = Login to application");
 			loginlib.loginToApplication(username, password);
 			
-			/*if(loginlib.isErrorMessageDispalyed())
-			{
-				common.popup_ClickOnOk();
-				loginlib.loginToApplication(username, newpassword);
-				String temp = password;
-				password = newpassword;
-				newpassword = temp;
-			}*/
-			
 			Reporter.log("Step 2 = Verify that user is logged in or not");
 			sfassert.assertEquals(navigationlib.getLoggedInUserName(), name);
 			
@@ -119,6 +111,7 @@ public class LoginTests
 			
 			Reporter.log("Step 7 = Verify that user is logged in or not");
 			sfassert.assertEquals(navigationlib.getLoggedInUserName(), name);
+			
 			
 			//soft assert
 			sfassert.assertAll();

@@ -70,15 +70,5 @@ public class LoginPO
 			return errorMessage.getText().trim();
 		}
 	
-		public String getAllFieldValidationMessages()
-		{
-			String msg="";
-			
-			for(WebElement e:fieldValidatons)
-			{
-				msg = msg + e.getText().trim();
-			}
-			return msg;
-		}
 		
 }

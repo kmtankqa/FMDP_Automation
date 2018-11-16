@@ -49,6 +49,10 @@ public class TopNavigationPO
 		@FindBy(css=".topnav> ul > li:nth-of-type(1) > ul > li:nth-of-type(2) > a")
 		public WebElement mnSettingsMenu;
 	
+		@FindBy(css=".topnav> ul > li:nth-of-type(5) > a")
+		public WebElement userManagementMenu;
+		
+		
 	//Home Page banner images
 		@FindBy(id="MainContent_imgbtnSettings")
 		public WebElement settingsBannerImage;
@@ -286,6 +290,15 @@ public class TopNavigationPO
 		{
 			action.moveToElement(settings).build().perform();
 			mnSettingsMenu.click();
+		}
+		
+		
+	//User Management
+		
+		//Click on User Management
+		public void menu_ClickOnUserManagement()
+		{
+			userManagementMenu.click();
 		}
 		
 		

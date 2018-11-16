@@ -1,24 +1,24 @@
-package AER.FMDP_Automation.functionalLibrary.settings.generalSetting;
+package AER.FMDP_Automation.functionalLibrary.user;
 
 import org.openqa.selenium.WebDriver;
 
 import AER.FMDP_Automation.pageObjects.common.CommonPO;
-import AER.FMDP_Automation.pageObjects.settings.generalSetting.GeneralSettingPO;
+import AER.FMDP_Automation.pageObjects.user.UserSetupPO;
 import utilities.SeleniumHelpers;
 
-public class GeneralSettingsLib 
+public class UserSetupLib 
 {
 	WebDriver driver;
 	SeleniumHelpers selenium;
-	GeneralSettingPO generalsettingadd;
+	UserSetupPO usermanagementadd;
 	CommonPO help ;
 	
 	
-	public GeneralSettingsLib(WebDriver driver)
+	public UserSetupLib(WebDriver driver)
 	{	 
         this.driver = driver;
         selenium = new SeleniumHelpers(driver);
-        generalsettingadd = new GeneralSettingPO(driver);
+        usermanagementadd = new UserSetupPO(driver);
         help = new CommonPO(driver);
 	}
 	
@@ -37,45 +37,61 @@ public class GeneralSettingsLib
 	 * @param date			Tax effective from date		e.g. 28 Dec 2017
 	 * @param ratename		Tax rate category name	e.g. AT_rate
 	 * @param ratepercent	Tax rate percentage		e.g. 15.00% 
+	 * @throws InterruptedException 
 	 * 
 	 */
-	public void generalSetting_Add(String smtpserver, String smtpusername, String smtppassword, String smtpport, String fromemail, String toemail, String generatededfpath, String dataretentionday, String sftpkeypath, String confirmationmessage)
+	public void userManagement_Add(String firstname, String lastname, String contactno, String emailid, String username, String passwordvalue, String confirmpassword, String descriptionvalue, String featureaccess) throws InterruptedException
 	{
-		generalsettingadd.enterSmtpServer(smtpserver);
-		generalsettingadd.enterSmtpUsername(smtpusername);
-		generalsettingadd.enterSmtpPassword(smtppassword);
-		generalsettingadd.enterSmtpPort(smtpport);
-		generalsettingadd.enterFromEmail(fromemail);
-		generalsettingadd.enterToEmail(toemail);
-		generalsettingadd.enterGeneratedEdfPath(generatededfpath);
-		generalsettingadd.enterDataRetentionDays(dataretentionday);
-		generalsettingadd.uploadSftpKey(sftpkeypath, confirmationmessage);
+		usermanagementadd.enterFirstName(firstname);
+		usermanagementadd.enterLastName(lastname);
+		usermanagementadd.enterContactNumber(contactno);
+		usermanagementadd.enterEmailId(emailid);
+		usermanagementadd.enterUserName(username);
+		usermanagementadd.enterPassword(passwordvalue);
+		usermanagementadd.enterConfirmPassword(confirmpassword);
+		usermanagementadd.enterDescription(descriptionvalue);
+		
+		if (featureaccess.contains("true"))
+		{
+			usermanagementadd.selectFeatureAccess();
+		}
+		else
+		{
+			usermanagementadd.unSelectFeatureAccess();
+		}
+		
 		help.btn_ClickOnSave();
 	}
 	
 	
-
+	public void clickOnCreateNewUserBtn()
+	{
+		usermanagementadd.clickOnCreateNewUserBtn();
+	}
+		
+	
+/*
 	//Search : SMTP Configuration section
-		/**
+		*//**
 		 * Read SMTP Configuration section data row wise including labels
 		 * @param row
 		 * @return data for given row
-		 */
+		 *//*
 		public String getSmtpConfigurationSectionData(int row)
 		{
 			return generalsettingadd.getSmtpConfigurationSectionData(row);
 		}
 		
 	//Search : General Details section
-		/**
+		*//**
 		 * Read General Details section data row wise including labels
 		 * @param row
 		 * @return data for given row
-		 */
+		 *//*
 		public String getGeneralDetailsSectionData(int row)
 		{
 			return generalsettingadd.getGeneralDetailsSectionData(row);
 		}
 		
-		
+		*/
 }

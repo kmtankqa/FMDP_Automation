@@ -15,7 +15,8 @@ import org.testng.asserts.SoftAssert;
 import AER.FMDP_Automation.functionalLibrary.common.CommonLib;
 import AER.FMDP_Automation.functionalLibrary.common.TopNavigationLib;
 import AER.FMDP_Automation.functionalLibrary.login.LoginLib;
-import AER.FMDP_Automation.functionalLibrary.settings.generalSetting.GeneralSettingsLib;
+import AER.FMDP_Automation.functionalLibrary.settings.generalSetting.GeneralSettingsSearchLib;
+import AER.FMDP_Automation.functionalLibrary.settings.generalSetting.GeneralSettingsSetupLib;
 import utilities.Constants;
 import utilities.ExceptionHandler;
 import utilities.JavaHelpers;
@@ -29,7 +30,8 @@ public class GeneralSettingsTests {
 	private TopNavigationLib navigationlib;
 	private CommonLib common;
 	private SeleniumHelpers selenium;
-	private GeneralSettingsLib generalsettingadd;
+	private GeneralSettingsSetupLib generalsettingadd;
+	private GeneralSettingsSearchLib generalsettingsearch;
 	private SoftAssert sfassert;
 	private String expected;
 	private String actual;
@@ -70,7 +72,8 @@ public class GeneralSettingsTests {
 		navigationlib = new TopNavigationLib(driver);
 		common = new CommonLib(driver);
 		selenium = new SeleniumHelpers(driver);
-		generalsettingadd = new GeneralSettingsLib(driver);
+		generalsettingadd = new GeneralSettingsSetupLib(driver);
+		generalsettingsearch = new GeneralSettingsSearchLib(driver);
 	}
 
 	@BeforeMethod
@@ -83,17 +86,16 @@ public class GeneralSettingsTests {
 	@Test(priority = 1)
 	public void generalSetting_Add() throws IOException {
 		try {
-			// Step 1 - Navigating and Logging in to Live Application
+			// Step 1 = Navigating and Logging in to Live Application
 			Reporter.log("Step 1 = Login to application at : " + Constants.LIVE_URL + " and loging in with correct credentails");
 			loginlib.loginToApplication(Constants.LIVE_URL, Constants.LIVE_USERNAME, Constants.LIVE_PASSWORD);
 
-			// Step 2- Opening Menu & Navigating to Settings > General Settings
+			// Step 2 = Opening Menu & Navigating to Settings > General Settings
 			Reporter.log("Step 2 = Opening Menu & Navigating to Settings > General Settings");
-			//navigationlib.clickOnMenuItem("General settings");
 			navigationlib.menu_ClickOnGeneralSetting();
 
-			// Step 3- On General Settings page, adding details, click on Save button
-			Reporter.log("Step 3 = On General Settings page, adding details, click on Save button");
+			// Step 3 = On General Settings page, adding details, uploading SFTP key and click on Save button
+			Reporter.log("Step 3 = On General Settings page, adding details, uploading SFTP key and click on Save button");
 			generalsettingadd.generalSetting_Add(smtpserver_add, smtpusername_add, smtppassword_add, smtpport_add, fromemail_add, toemail_add, generatededfpath_add, dataretentionday_add, sftpKeyPath + sftpFileName, confirmationmessage);
 			common.popup_ClickOnSuccessOk();
 
@@ -106,44 +108,44 @@ public class GeneralSettingsTests {
 
 				// Verifying SMTP server
 				expected = smtpserver_add;
-				actual = generalsettingadd.getSmtpConfigurationSectionData(1);
+				actual = generalsettingsearch.getSmtpConfigurationSectionData(1);
 				sfassert.assertEquals(actual, expected);
 	
 				// Verifying SMTP username
 				expected = smtpusername_add;
-				actual = generalsettingadd.getSmtpConfigurationSectionData(2);
+				actual = generalsettingsearch.getSmtpConfigurationSectionData(2);
 				sfassert.assertEquals(actual, expected);
 	
 				// Verifying SMTP password
 				expected = smtppassword_add;
-				actual = generalsettingadd.getSmtpConfigurationSectionData(3);
+				actual = generalsettingsearch.getSmtpConfigurationSectionData(3);
 				sfassert.assertEquals(actual, expected);
 	
 				// Verifying SMTP port
 				expected = smtpport_add;
-				actual = generalsettingadd.getSmtpConfigurationSectionData(4);
+				actual = generalsettingsearch.getSmtpConfigurationSectionData(4);
 				sfassert.assertEquals(actual, expected);
 
 			//General Details section :
 
 				// Verifying From Email
 				expected = fromemail_add;
-				actual = generalsettingadd.getGeneralDetailsSectionData(2);
+				actual = generalsettingsearch.getGeneralDetailsSectionData(2);
 				sfassert.assertEquals(actual, expected);
 	
 				// Verifying To Email
 				expected = toemail_add;
-				actual = generalsettingadd.getGeneralDetailsSectionData(3);
+				actual = generalsettingsearch.getGeneralDetailsSectionData(3);
 				sfassert.assertEquals(actual, expected);
 	
 				// Verifying Generated EDF Path
 				expected = generatededfpath_add;
-				actual = generalsettingadd.getGeneralDetailsSectionData(4);
+				actual = generalsettingsearch.getGeneralDetailsSectionData(4);
 				sfassert.assertEquals(actual, expected);
 	
 				// Verifying Data Retention Days
 				expected = dataretentionday_add;
-				actual = generalsettingadd.getGeneralDetailsSectionData(5);
+				actual = generalsettingsearch.getGeneralDetailsSectionData(5);
 				sfassert.assertEquals(actual, expected);
 				
 				
@@ -159,7 +161,7 @@ public class GeneralSettingsTests {
 	}
 
 	
-	/*	Test 2 : Verify that user can edit tax category successfully */ 
+	/*	Test 2 : Verify that user can edit general settings information successfully */ 
 	@Test(priority = 2, dependsOnMethods = { "generalSetting_Add" })
 	public void generalSetting_Update() throws IOException {
 		try {
@@ -169,8 +171,8 @@ public class GeneralSettingsTests {
 			generalsettingadd.generalSetting_Add(smtpserver_update, smtpusername_update, smtppassword_update, smtpport_update, fromemail_update, toemail_update, generatededfpath_update, dataretentionday_update, sftpKeyPath + sftpFileName, confirmationmessage);
 			common.popup_ClickOnSuccessOk();
 			
-			// Step 2 = Searching for edited general settings details and verifying that it has correct
-			Reporter.log("Step 2 = Searching for edited general settings details and verifying that it has correct");
+			// Step 2 = Searching for configured general settings and verifying that it has correct details
+			Reporter.log("Step 2 = Searching for configured general settings and verifying that it has correct details");
 			navigationlib.link_ClickOnHome();
 			navigationlib.menu_ClickOnGeneralSetting();		
 			
@@ -178,44 +180,44 @@ public class GeneralSettingsTests {
 
 				// Verifying SMTP server
 				expected = smtpserver_update;
-				actual = generalsettingadd.getSmtpConfigurationSectionData(1);
+				actual = generalsettingsearch.getSmtpConfigurationSectionData(1);
 				sfassert.assertEquals(actual, expected);
 	
 				// Verifying SMTP username
 				expected = smtpusername_update;
-				actual = generalsettingadd.getSmtpConfigurationSectionData(2);
+				actual = generalsettingsearch.getSmtpConfigurationSectionData(2);
 				sfassert.assertEquals(actual, expected);
 	
 				// Verifying SMTP password
 				expected = smtppassword_update;
-				actual = generalsettingadd.getSmtpConfigurationSectionData(3);
+				actual = generalsettingsearch.getSmtpConfigurationSectionData(3);
 				sfassert.assertEquals(actual, expected);
 	
 				// Verifying SMTP port
 				expected = smtpport_update;
-				actual = generalsettingadd.getSmtpConfigurationSectionData(4);
+				actual = generalsettingsearch.getSmtpConfigurationSectionData(4);
 				sfassert.assertEquals(actual, expected);
 
 			//General Details section :
 
 				// Verifying From Email
 				expected = fromemail_update;
-				actual = generalsettingadd.getGeneralDetailsSectionData(2);
+				actual = generalsettingsearch.getGeneralDetailsSectionData(2);
 				sfassert.assertEquals(actual, expected);
 	
 				// Verifying To Email
 				expected = toemail_update;
-				actual = generalsettingadd.getGeneralDetailsSectionData(3);
+				actual = generalsettingsearch.getGeneralDetailsSectionData(3);
 				sfassert.assertEquals(actual, expected);
 	
 				// Verifying Generated EDF Path
 				expected = generatededfpath_update;
-				actual = generalsettingadd.getGeneralDetailsSectionData(4);
+				actual = generalsettingsearch.getGeneralDetailsSectionData(4);
 				sfassert.assertEquals(actual, expected);
 	
 				// Verifying Data Retention Days
 				expected = dataretentionday_update;
-				actual = generalsettingadd.getGeneralDetailsSectionData(5);
+				actual = generalsettingsearch.getGeneralDetailsSectionData(5);
 				sfassert.assertEquals(actual, expected);
 			
 

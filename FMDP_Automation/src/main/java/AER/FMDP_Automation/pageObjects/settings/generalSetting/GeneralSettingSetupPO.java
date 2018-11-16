@@ -1,5 +1,5 @@
 package AER.FMDP_Automation.pageObjects.settings.generalSetting;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,13 +10,13 @@ import AER.FMDP_Automation.pageObjects.common.CommonPO;
 import utilities.Constants;
 import utilities.SeleniumHelpers; 
 
-public class GeneralSettingPO 
+public class GeneralSettingSetupPO 
 {
 	WebDriver driver;
 	SeleniumHelpers selenium;
 	CommonPO help;
 	
-	public GeneralSettingPO(WebDriver driver)
+	public GeneralSettingSetupPO(WebDriver driver)
 	{	 
         this.driver = driver;
         selenium = new SeleniumHelpers(driver);
@@ -68,13 +68,6 @@ public class GeneralSettingPO
 		private WebElement keyUploadBtn;
 
 			
-		@FindBy(css=".successbox > span")
-		private WebElement uploadConfirmation;
-		
-		@FindBy(css=".successbox > div > input[value='Ok']")
-		private WebElement successOkBtn;
-	
-				
 		public void enterSmtpServer(String smtpserver)
 		{
 			smtpServer.clear();
@@ -127,27 +120,10 @@ public class GeneralSettingPO
 		{
 			chooseSftpKeyFile.sendKeys(sftpkeypath);
 			keyUploadBtn.click();
-			selenium.waitTillElementIsVisible(uploadConfirmation);
-			uploadConfirmation.getText().contains(confirmationmessage);
-			successOkBtn.click();
-			selenium.waitTillElementIsNOTVisible(uploadConfirmation);
-		}
-		
-	
-	//Search General Setting details
-		
-		//SMTP Configuration section :
-		public String getSmtpConfigurationSectionData(int row)
-		{
-			String cssSelector = ".right-col > div > table:nth-of-type(1) > tbody > tr:nth-of-type(" + row + ") > td > input";
-			return selenium.waitTillElementIsVisible(By.cssSelector(cssSelector)).getAttribute("value");
-		}
-		
-		//General Details section :
-		public String getGeneralDetailsSectionData(int row)
-		{
-			String cssSelector = ".right-col > div > table:nth-of-type(2) > tbody > tr:nth-of-type(" + row + ") > td > input";
-			return selenium.waitTillElementIsVisible(By.cssSelector(cssSelector)).getAttribute("value");
+			selenium.waitTillElementIsVisible(help.successConfirmationMsg);
+			help.successConfirmationMsg.getText().contains(confirmationmessage);
+			help.successOkBtn.click();
+			selenium.waitTillElementIsNOTVisible(help.successConfirmationMsg);
 		}
 		
 		

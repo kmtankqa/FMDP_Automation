@@ -75,13 +75,4 @@ public class LoginLib
 		return b;
 	}
 	
-	/**
-	 * Get all validation messages 
-	 * @return validation text
-	 */
-	public String getAllFieldValidationMessages()
-		{
-			return loginpo.getAllFieldValidationMessages();
-		}
-	
 }

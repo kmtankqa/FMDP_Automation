@@ -146,6 +146,16 @@ public class TopNavigationLib
 	}
 	
 	
+	//User Management
+	
+	/**
+	 * Click on User Management Menu
+	 */
+	public void menu_ClickOnUserManagement()
+	{
+		topnavigation.menu_ClickOnUserManagement();
+	}
+	
 	//Operations
 	
 	/**

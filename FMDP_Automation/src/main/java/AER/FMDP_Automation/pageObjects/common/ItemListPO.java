@@ -35,67 +35,60 @@ public class ItemListPO
 	 * All WebElements are identified by @FindBy annotation
 	 * @FindBy can accept tagName, partialLinkText, name, linkText, id, css, className, xpath as attributes.
 	 */ 
-	
-	
-		//Search section
-		
-			@FindBy(css="input#search")
-			private WebElement search_Input;
-	
-			@FindBy(css="#item-list ul li.app-selectedListItem")
-			private WebElement search_SelectedItem;
-			
-			@FindBy(css="#item-list ul li > span")
-			private WebElement search_FirstItem;
-			
-			@FindBy(css="#item-list ul li button > i.icon-pencil")
-			private WebElement search_FirstItem_Edit;
-			
-			@FindBy(css="#item-list ul li")
-			private List<WebElement> search_AllItems;
-			
-			@FindBy(id="OptionBarButton")
-			private WebElement search_FilterIcon;
-			
-				@FindBy(id="activeRecordState")
-				private WebElement search_ActiveCheckbox;
 				
-				@FindBy(id="inactiveRecordState")
-				private WebElement search_InactiveCheckbox;
-			
-			@FindBy(css="li.noRecords")
-			private WebElement search_NoRecordMsg;	
-			
+	
+	//Search section
+	
+		@FindBy(css="div[id='griddata'] > table > tbody tr td:nth-of-type(3) > a")
+		private WebElement search_FirstItem;
+	
+		@FindBy(css=".no-records > span")
+		private WebElement search_NoRecordMsg;	
+				
+		@FindBy(css="#item-list ul li")
+		private List<WebElement> search_AllItems;
 		
-			
-		//Search section
-			public void search_SearchWithText(String text)
-			{
-				search_Input.clear();
-				search_Input.sendKeys(text);
-				help.waitTillPageLoaded();
-			}
-			
-			public void search_SearchWithText(String text,WebElement e)
+	
+	
+		//Search method
+			public void search_SearchWithTextType(String text,WebElement e)
 			{
 				e.clear();
 				e.sendKeys(text);
-				help.waitTillPageLoaded();
 			}
 			
-			public void search_ClickOnFirstItem()
+			
+			public void search_SearchWithSelectCheckbox(WebElement e)
 			{
-				selenium.waitTillElementIsClickable(search_FirstItem).click();
-				help.waitTillPageLoaded();
+				if(!e.isSelected())
+				{
+					e.click();
+				}
 			}
 			
-			public void search_ClickOnFirstItem(WebElement e)
+			
+			public void search_SearchWithUnSelectCheckbox(WebElement e)
+			{
+				if(e.isSelected())
+				{
+					e.click();
+				}
+			}
+			
+			
+			public void search_ClickOnFirstSearchedItem()
+			{	
+				selenium.waitTillElementIsClickable(search_FirstItem).click();
+			}
+			
+			
+			public void search_ClickOnFirstSearchedItem(WebElement e)
 			{
 				selenium.waitTillElementIsClickable(e).click();
-				help.waitTillPageLoaded();
 			}
 			
-			public boolean search_IsFirstItemDisplayed()
+			
+			public boolean search_IsFirstSearchedItemDisplayed()
 			{
 				try 
 				{
@@ -106,34 +99,24 @@ public class ItemListPO
 		            return false;
 		        }
 			}
-			
-			public void search_EditFirstItem()
-			{
-				selenium.waitTillElementIsClickable(search_FirstItem_Edit).click();
-				help.waitTillPageLoaded();
-			}
-			
-			public void search_ClickOnFilterIcon()
-			{
-				search_FilterIcon.click();
-				help.waitTillPageLoaded();
-			}
-			
-			public void search_ClickOnInactiveCheckbox()
-			{
-				search_InactiveCheckbox.click();
-				help.waitTillPageLoaded();
-			}
+
 			
 			public String search_GetNoRecordMsgText()
 			{
 				return search_NoRecordMsg.getText().trim();
 			}
+		
 			
 			public int list_GetTotalItems()
 			{
 				return search_AllItems.size();
 			}
+			
+		
+		
+	
+			
+			
 			
 }
 

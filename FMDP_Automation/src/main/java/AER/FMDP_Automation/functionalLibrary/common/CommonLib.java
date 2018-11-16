@@ -111,12 +111,40 @@ public class CommonLib
 	}
 	
 	/**
-	 * Popup - Click on Save button
+	 * Click on Save button
 	 */
 	public void btn_ClickOnSave()
 	{
 		common.btn_ClickOnSave();
 	}
+	
+	/**
+	 * Click on Cancel button
+	 */
+	public void btn_ClickOnCancel()
+	{
+		common.btn_ClickOnCancel();
+	}
+	
+	/**
+	 * Click on Search button
+	 */
+	public void btn_ClickOnSearch()
+	{
+		common.btn_ClickOnSearch();
+	}
+	
+	/**
+	 * Click on Reset button
+	 */
+	public void btn_ClickOnReset()
+	{
+		common.btn_ClickOnReset();
+	}
+	
+	
+	
+	
 	
 	/**
 	 * Get text from bottom right pop up

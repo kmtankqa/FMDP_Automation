@@ -61,6 +61,11 @@ public class CommonPO
 		@FindBy(id="task")
 		public WebElement taskBtn;
 		
+		
+		//Success confirmation message
+		@FindBy(css=".successbox > span")
+		public WebElement successConfirmationMsg;
+		
 		//Ok button on error popup
 		@FindBy(css=".errorbox div input[type='button']")
 		public WebElement errorOkBtn;
@@ -68,10 +73,24 @@ public class CommonPO
 		//Ok button on success popup
 		@FindBy(css=".successbox div input[type='button']")
 		public WebElement successOkBtn;
-				
+		
 		//Save button
 		@FindBy(id="btnSave")
 		public WebElement saveBtn;
+		
+		//Cancel button
+		@FindBy(css="input[value='Cancel']")
+		public WebElement cancelBtn;
+		
+		//Search button
+		@FindBy(id="btnSearch")
+		public WebElement searchBtn;
+		
+		//Reset button
+		@FindBy(id="btnReset")
+		public WebElement resetBtn;
+		
+		
 		
 		
 		//Progress bar after login
@@ -87,6 +106,9 @@ public class CommonPO
 		By okButtonOnBottomRightPopUp= By.name("ok");
 		By yesButtonOnBottomRightPopUp= By.name("yes");
 		
+		
+		
+	
 		
 		//Common Buttons
 		
@@ -165,6 +187,8 @@ public class CommonPO
 			selenium.waitTillElementIsClickable(successOkBtn);
 			selenium.pageScrollInView(successOkBtn);
 			successOkBtn.click();
+			selenium.waitTillElementIsNOTVisible(successOkBtn);
+
 		}
 		
 		public void btn_ClickOnSave()
@@ -172,7 +196,31 @@ public class CommonPO
 			selenium.waitTillElementIsVisible(saveBtn);
 			selenium.waitTillElementIsClickable(saveBtn);
 			selenium.pageScrollInView(saveBtn);
-			saveBtn.click();	
+			saveBtn.click();
+		}
+		
+		public void btn_ClickOnCancel()
+		{
+			selenium.waitTillElementIsVisible(cancelBtn);
+			selenium.waitTillElementIsClickable(cancelBtn);
+			selenium.pageScrollInView(cancelBtn);
+			cancelBtn.click();
+		}
+		
+		public void btn_ClickOnSearch()
+		{
+			selenium.waitTillElementIsVisible(searchBtn);
+			selenium.waitTillElementIsClickable(searchBtn);
+			selenium.pageScrollInView(searchBtn);
+			searchBtn.click();
+		}
+				
+		public void btn_ClickOnReset()
+		{
+			selenium.waitTillElementIsVisible(resetBtn);
+			selenium.waitTillElementIsClickable(resetBtn);
+			selenium.pageScrollInView(resetBtn);
+			resetBtn.click();
 		}
 		
 		
