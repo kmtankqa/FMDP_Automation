@@ -62,6 +62,10 @@ public class CommonPO
 		public WebElement taskBtn;
 		
 		
+		//Include deleted records checkbox
+		@FindBy(id="MainContent_chkIncludeDeletedAsWell")
+		private WebElement chkboxIncludeDeleteRecord;
+		
 		//Success confirmation message
 		@FindBy(css=".successbox > span")
 		public WebElement successConfirmationMsg;
@@ -91,6 +95,13 @@ public class CommonPO
 		public WebElement resetBtn;
 		
 		
+		//Yes button on Confirmation popup
+		@FindBy(css=".alertBoxBtn input[value='Yes']")
+		public WebElement yesBtn;
+
+		//No button on Confirmation popup
+		@FindBy(css=".alertBoxBtn input[value='No']")
+		public WebElement noBtn;		
 		
 		
 		//Progress bar after login
@@ -223,6 +234,31 @@ public class CommonPO
 			resetBtn.click();
 		}
 		
+		public void popup_ClickOnConfirmationYes()
+		{
+			selenium.waitTillElementIsVisible(yesBtn);
+			selenium.waitTillElementIsClickable(yesBtn);
+			selenium.pageScrollInView(yesBtn);
+			yesBtn.click();
+		}
+		
+		public void popup_ClickOnConfirmationNo()
+		{
+			selenium.waitTillElementIsVisible(noBtn);
+			selenium.waitTillElementIsClickable(noBtn);
+			selenium.pageScrollInView(noBtn);
+			noBtn.click();
+		}
+		
+		public void checkbox_includeDeleteRecord()
+		{
+			selenium.waitTillElementIsVisible(chkboxIncludeDeleteRecord);
+			selenium.waitTillElementIsClickable(chkboxIncludeDeleteRecord);
+			selenium.pageScrollInView(chkboxIncludeDeleteRecord);
+			chkboxIncludeDeleteRecord.click();
+		}
+		
+		
 		
 		//Wait till page loaded completely after login
 		public void waitAfterLogin()
@@ -282,6 +318,20 @@ public class CommonPO
 			{
 				selenium.pageScrollInView(toggle);
 				toggle.click();
+			}
+		}
+		
+		
+		//Toggle status
+		public void setToggleStaus(WebElement active, WebElement inactive, String statusvalue)
+		{
+			if (statusvalue.contains("Active"))
+			{
+				inactive.click();
+			}
+			else if(statusvalue.contains("Inactive"))  
+			{
+				active.click();
 			}
 		}
 		

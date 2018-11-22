@@ -22,23 +22,21 @@ public class UserSetupLib
         help = new CommonPO(driver);
 	}
 	
+	
 	/**
-	 * Setup new tax category by providing information in all the fields.
-	 * Update tax information from added tax category.
-	 *  
-	 * @param name			Name of tax	category	e.g. AT_Tax_20171228_143354
-	 * @param status		Status of tax category	e.g. Active, Inactive
-	 * @param purchase		Tax Applies to purchases	e.g. Yes, No
-	 * @param sale			Tax Applies to sales	e.g. Yes, No
-	 * @param service		Tax applicable to Services	e.g. Yes, No
-	 * @param product		Tax applicable to Products	e.g. Yes, No
-	 * @param sundry		Tax applicable to Sundries	e.g. Yes, No
-	 * @param expense		Tax applicable to Expenses	e.g. Yes, No
-	 * @param date			Tax effective from date		e.g. 28 Dec 2017
-	 * @param ratename		Tax rate category name	e.g. AT_rate
-	 * @param ratepercent	Tax rate percentage		e.g. 15.00% 
-	 * @throws InterruptedException 
+	 * Setup new user record by providing information in all the fields.
+	 * Update user information from added user record.
 	 * 
+	 * @param firstname				First Name of user	e.g. FMDP, John
+	 * @param lastname				Last Name of user	e.g. Automation, Carter
+	 * @param contactno				Contact Number of user	e.g. 6136994792
+	 * @param emailid				Email Id of user	e.g. Email_20181120_195254@dayrep.com
+	 * @param username				Username of user	e.g. user_20181120_195254
+	 * @param passwordvalue			Password of given username	e.g. passw0rd
+	 * @param confirmpassword		Confirm password	e.g. passw0rd
+	 * @param descriptionvalue		Description of user	e.g. This is automated description for new user creation
+	 * @param featureaccess			Feature access information	e.g. true or false
+	 * @throws InterruptedException
 	 */
 	public void userManagement_Add(String firstname, String lastname, String contactno, String emailid, String username, String passwordvalue, String confirmpassword, String descriptionvalue, String featureaccess) throws InterruptedException
 	{
@@ -57,41 +55,41 @@ public class UserSetupLib
 		}
 		else
 		{
-			usermanagementadd.unSelectFeatureAccess();
+			usermanagementadd.deselectFeatureAccess();
 		}
 		
 		help.btn_ClickOnSave();
 	}
 	
 	
+	/**
+	 * Click on Create New User button to add new user record.
+	 */
 	public void clickOnCreateNewUserBtn()
 	{
 		usermanagementadd.clickOnCreateNewUserBtn();
 	}
 		
 	
-/*
-	//Search : SMTP Configuration section
-		*//**
-		 * Read SMTP Configuration section data row wise including labels
-		 * @param row
-		 * @return data for given row
-		 *//*
-		public String getSmtpConfigurationSectionData(int row)
-		{
-			return generalsettingadd.getSmtpConfigurationSectionData(row);
-		}
-		
-	//Search : General Details section
-		*//**
-		 * Read General Details section data row wise including labels
-		 * @param row
-		 * @return data for given row
-		 *//*
-		public String getGeneralDetailsSectionData(int row)
-		{
-			return generalsettingadd.getGeneralDetailsSectionData(row);
-		}
-		
-		*/
+	/**
+	 * Set user's status
+	 * @param statusvalue	status value of supplier i.e. Active or Inactive
+	 * 
+	 */
+	public void user_changeStatus(String statusvalue)
+	{
+		usermanagementadd.setUserStatus(statusvalue);
+	}
+	
+	
+	/**
+	 * Delete Active or Inactive user record.
+	 */
+	public void user_deleteRecord()
+	{
+		usermanagementadd.deleteUserRecord();
+		help.popup_ClickOnConfirmationYes();
+	}
+	
+	
 }

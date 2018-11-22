@@ -1,31 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
+    <line>
+      <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with incorrect credentails]]>
+    </line>
     <line>
       <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with correct credentails]]>
     </line>
     <line>
-      <![CDATA[Step 2 = Opening Menu & Navigating to User Management]]>
+      <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with correct credentails]]>
     </line>
     <line>
-      <![CDATA[Step 3 = On Create New User Details page, adding details, click on Save button]]>
+      <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with correct credentails]]>
+    </line>
+    <line>
+      <![CDATA[Step 2 = Opening Menu & Navigating to Settings > M & N Settings]]>
+    </line>
+    <line>
+      <![CDATA[Step 3 = On Monitoring & Notification Settings page, adding details, click on Save button]]>
+    </line>
+    <line>
+      <![CDATA[Step 2 = Opening Menu & Navigating to Settings > General Settings]]>
+    </line>
+    <line>
+      <![CDATA[Step 3 = On General Settings page, adding details, uploading SFTP key and click on Save button]]>
+    </line>
+    <line>
+      <![CDATA[Step 4 = Searching for added Monitoring & Notification settings details and verifying that it has correct details]]>
+    </line>
+    <line>
+      <![CDATA[Step 2 = Opening Menu & Navigating to User Management and Open Create New User screen]]>
+    </line>
+    <line>
+      <![CDATA[Step 2 = Verify the validation message displayed]]>
+    </line>
+    <line>
+      <![CDATA[Step 3 = On Create New User page, adding details, click on Save button]]>
     </line>
     <line>
       <![CDATA[Step 4 = Searching for added general settings details and verifying that it has correct details]]>
     </line>
     <line>
+      <![CDATA[Step 4 = Searching for added User record and verifying that it has correct details]]>
+    </line>
+    <line>
+      <![CDATA[Step 1 = Login to application]]>
+    </line>
+    <line>
       <![CDATA[Step 1 = Editing added generate settings details]]>
+    </line>
+    <line>
+      <![CDATA[Step 1 = Editing added generate settings details]]>
+    </line>
+    <line>
+      <![CDATA[Step 1 = Editing details of added User record, click on Save button]]>
+    </line>
+    <line>
+      <![CDATA[Step 2 = Verify that user is logged in or not]]>
+    </line>
+    <line>
+      <![CDATA[Step 3 = Click on change password link and performing change password]]>
     </line>
     <line>
       <![CDATA[Step 2 = Searching for edited general settings details and verifying that it has correct]]>
     </line>
+    <line>
+      <![CDATA[Step 2 = Searching for edited User record and verifying that it has correct details]]>
+    </line>
+    <line>
+      <![CDATA[Step 2 = Searching for configured general settings and verifying that it has correct details]]>
+    </line>
+    <line>
+      <![CDATA[Step 4 = Click on logout, and login as new password]]>
+    </line>
+    <line>
+      <![CDATA[Step 6 = Click on change password and reverting to original password]]>
+    </line>
+    <line>
+      <![CDATA[Step 7 = Verify that user is logged in or not]]>
+    </line>
+    <line>
+      <![CDATA[Step 1 = Searching for added user and inactivating user]]>
+    </line>
+    <line>
+      <![CDATA[Step 2 = Verify the inactive user can't login]]>
+    </line>
+    <line>
+      <![CDATA[Step 1 = Searching for added & inactivated user and Deleting it]]>
+    </line>
+    <line>
+      <![CDATA[Step 2 = Verify the deleted user record is not present, it display on screen after select 'Include deleted records' option]]>
+    </line>
+    <line>
+      <![CDATA[Step 3 = Verify the inactive user can't do login]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29055" started-at="2018-11-15T14:01:23Z" finished-at="2018-11-15T14:01:52Z">
+  <suite name="RegressionSuit" duration-ms="102758" started-at="2018-11-22T13:52:41Z" finished-at="2018-11-22T13:54:24Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29055" started-at="2018-11-15T14:01:23Z" finished-at="2018-11-15T14:01:52Z">
-      <class name="AER.FMDP_Automation.tests.user.UserManagementTests">
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:AER.FMDP_Automation.tests.user.UserManagementTests@5622fdf]" name="setUp" is-config="true" duration-ms="7845" started-at="2018-11-15T14:01:23Z" finished-at="2018-11-15T14:01:30Z">
+    <test name="RunningOnChrome" duration-ms="102758" started-at="2018-11-22T13:52:41Z" finished-at="2018-11-22T13:54:24Z">
+      <class name="AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@343f4d3d]" name="setUp" is-config="true" duration-ms="17414" started-at="2018-11-22T13:52:41Z" finished-at="2018-11-22T13:52:59Z">
           <params>
             <param index="0">
               <value>
@@ -41,31 +116,87 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.user.UserManagementTests@5622fdf]" name="beforeMethod" is-config="true" duration-ms="11" started-at="2018-11-15T14:01:30Z" finished-at="2018-11-15T14:01:30Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@343f4d3d]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-22T13:52:59Z" finished-at="2018-11-22T13:52:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="user_Add()[pri:1, instance:AER.FMDP_Automation.tests.user.UserManagementTests@5622fdf]" name="user_Add" duration-ms="9007" started-at="2018-11-15T14:01:30Z" finished-at="2018-11-15T14:01:39Z">
+        <test-method status="PASS" signature="generalSetting_Add()[pri:1, instance:AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@343f4d3d]" name="generalSetting_Add" duration-ms="26689" started-at="2018-11-22T13:52:59Z" finished-at="2018-11-22T13:53:25Z">
           <reporter-output>
             <line>
               <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with correct credentails]]>
             </line>
             <line>
-              <![CDATA[Step 2 = Opening Menu & Navigating to User Management]]>
+              <![CDATA[Step 2 = Opening Menu & Navigating to Settings > General Settings]]>
             </line>
             <line>
-              <![CDATA[Step 3 = On Create New User Details page, adding details, click on Save button]]>
+              <![CDATA[Step 3 = On General Settings page, adding details, uploading SFTP key and click on Save button]]>
             </line>
             <line>
               <![CDATA[Step 4 = Searching for added general settings details and verifying that it has correct details]]>
             </line>
           </reporter-output>
-        </test-method> <!-- user_Add -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.user.UserManagementTests@5622fdf]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-15T14:01:39Z" finished-at="2018-11-15T14:01:39Z">
+        </test-method> <!-- generalSetting_Add -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@343f4d3d]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-22T13:53:30Z" finished-at="2018-11-22T13:53:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="user_Update()[pri:2, instance:AER.FMDP_Automation.tests.user.UserManagementTests@5622fdf]" name="user_Update" duration-ms="11336" started-at="2018-11-15T14:01:39Z" depends-on-methods="AER.FMDP_Automation.tests.user.UserManagementTests.user_Add" finished-at="2018-11-15T14:01:51Z">
+        <test-method status="PASS" signature="generalSetting_Update()[pri:2, instance:AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@343f4d3d]" name="generalSetting_Update" duration-ms="25589" started-at="2018-11-22T13:53:30Z" depends-on-methods="AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests.generalSetting_Add" finished-at="2018-11-22T13:53:55Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Step 1 = Editing added generate settings details]]>
+            </line>
+            <line>
+              <![CDATA[Step 2 = Searching for configured general settings and verifying that it has correct details]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- generalSetting_Update -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@343f4d3d]" name="tearDown" is-config="true" duration-ms="3061" started-at="2018-11-22T13:53:55Z" finished-at="2018-11-22T13:53:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests -->
+      <class name="AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests@53b32d7]" name="setUp" is-config="true" duration-ms="15944" started-at="2018-11-22T13:52:41Z" finished-at="2018-11-22T13:52:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests@53b32d7]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-11-22T13:52:57Z" finished-at="2018-11-22T13:52:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="mnSetting_Add()[pri:1, instance:AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests@53b32d7]" name="mnSetting_Add" duration-ms="22304" started-at="2018-11-22T13:52:57Z" finished-at="2018-11-22T13:53:19Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with correct credentails]]>
+            </line>
+            <line>
+              <![CDATA[Step 2 = Opening Menu & Navigating to Settings > M & N Settings]]>
+            </line>
+            <line>
+              <![CDATA[Step 3 = On Monitoring & Notification Settings page, adding details, click on Save button]]>
+            </line>
+            <line>
+              <![CDATA[Step 4 = Searching for added Monitoring & Notification settings details and verifying that it has correct details]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- mnSetting_Add -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests@53b32d7]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-11-22T13:53:30Z" finished-at="2018-11-22T13:53:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="mnSetting_Update()[pri:2, instance:AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests@53b32d7]" name="mnSetting_Update" duration-ms="17577" started-at="2018-11-22T13:53:30Z" depends-on-methods="AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests.mnSetting_Add" finished-at="2018-11-22T13:53:47Z">
           <reporter-output>
             <line>
               <![CDATA[Step 1 = Editing added generate settings details]]>
@@ -74,12 +205,161 @@
               <![CDATA[Step 2 = Searching for edited general settings details and verifying that it has correct]]>
             </line>
           </reporter-output>
-        </test-method> <!-- user_Update -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:AER.FMDP_Automation.tests.user.UserManagementTests@5622fdf]" name="tearDown" is-config="true" duration-ms="783" started-at="2018-11-15T14:01:51Z" finished-at="2018-11-15T14:01:52Z">
+        </test-method> <!-- mnSetting_Update -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests@53b32d7]" name="tearDown" is-config="true" duration-ms="6690" started-at="2018-11-22T13:53:47Z" finished-at="2018-11-22T13:53:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- AER.FMDP_Automation.tests.user.UserManagementTests -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests -->
+      <class name="AER.FMDP_Automation.tests.user.UserTests">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:AER.FMDP_Automation.tests.user.UserTests@5442a311]" name="setUp" is-config="true" duration-ms="18299" started-at="2018-11-22T13:52:41Z" finished-at="2018-11-22T13:53:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.user.UserTests@5442a311]" name="beforeMethod" is-config="true" duration-ms="5" started-at="2018-11-22T13:53:00Z" finished-at="2018-11-22T13:53:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="user_Add()[pri:1, instance:AER.FMDP_Automation.tests.user.UserTests@5442a311]" name="user_Add" duration-ms="30282" started-at="2018-11-22T13:53:00Z" finished-at="2018-11-22T13:53:30Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with correct credentails]]>
+            </line>
+            <line>
+              <![CDATA[Step 2 = Opening Menu & Navigating to User Management and Open Create New User screen]]>
+            </line>
+            <line>
+              <![CDATA[Step 3 = On Create New User page, adding details, click on Save button]]>
+            </line>
+            <line>
+              <![CDATA[Step 4 = Searching for added User record and verifying that it has correct details]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- user_Add -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.user.UserTests@5442a311]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-22T13:53:30Z" finished-at="2018-11-22T13:53:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="user_Update()[pri:2, instance:AER.FMDP_Automation.tests.user.UserTests@5442a311]" name="user_Update" duration-ms="26870" started-at="2018-11-22T13:53:30Z" depends-on-methods="AER.FMDP_Automation.tests.user.UserTests.user_Add" finished-at="2018-11-22T13:53:57Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Step 1 = Editing details of added User record, click on Save button]]>
+            </line>
+            <line>
+              <![CDATA[Step 2 = Searching for edited User record and verifying that it has correct details]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- user_Update -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.user.UserTests@5442a311]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-22T13:54:10Z" finished-at="2018-11-22T13:54:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="user_Inactive()[pri:3, instance:AER.FMDP_Automation.tests.user.UserTests@5442a311]" name="user_Inactive" duration-ms="5220" started-at="2018-11-22T13:54:10Z" depends-on-methods="AER.FMDP_Automation.tests.user.UserTests.user_Update" finished-at="2018-11-22T13:54:15Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Step 1 = Searching for added user and inactivating user]]>
+            </line>
+            <line>
+              <![CDATA[Step 2 = Verify the inactive user can't login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- user_Inactive -->
+        <test-method status="PASS" signature="user_Delete()[pri:4, instance:AER.FMDP_Automation.tests.user.UserTests@5442a311]" name="user_Delete" duration-ms="7899" started-at="2018-11-22T13:54:15Z" depends-on-methods="AER.FMDP_Automation.tests.user.UserTests.user_Inactive" finished-at="2018-11-22T13:54:23Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Step 1 = Searching for added & inactivated user and Deleting it]]>
+            </line>
+            <line>
+              <![CDATA[Step 2 = Verify the deleted user record is not present, it display on screen after select 'Include deleted records' option]]>
+            </line>
+            <line>
+              <![CDATA[Step 3 = Verify the inactive user can't do login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- user_Delete -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.user.UserTests@5442a311]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-22T13:54:15Z" finished-at="2018-11-22T13:54:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:AER.FMDP_Automation.tests.user.UserTests@5442a311]" name="tearDown" is-config="true" duration-ms="819" started-at="2018-11-22T13:54:23Z" finished-at="2018-11-22T13:54:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- AER.FMDP_Automation.tests.user.UserTests -->
+      <class name="AER.FMDP_Automation.tests.login.LoginTests">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@57baeedf]" name="setUp" is-config="true" duration-ms="15873" started-at="2018-11-22T13:52:41Z" finished-at="2018-11-22T13:52:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@57baeedf]" name="beforeMethod" is-config="true" duration-ms="5" started-at="2018-11-22T13:52:57Z" finished-at="2018-11-22T13:52:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="login_Failure()[pri:1, instance:AER.FMDP_Automation.tests.login.LoginTests@57baeedf]" name="login_Failure" duration-ms="23186" started-at="2018-11-22T13:52:57Z" finished-at="2018-11-22T13:53:20Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with incorrect credentails]]>
+            </line>
+            <line>
+              <![CDATA[Step 2 = Verify the validation message displayed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login_Failure -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@57baeedf]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-11-22T13:53:30Z" finished-at="2018-11-22T13:53:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="login_ChangePassword()[pri:2, instance:AER.FMDP_Automation.tests.login.LoginTests@57baeedf]" name="login_ChangePassword" duration-ms="39258" started-at="2018-11-22T13:53:30Z" finished-at="2018-11-22T13:54:09Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Step 1 = Login to application]]>
+            </line>
+            <line>
+              <![CDATA[Step 2 = Verify that user is logged in or not]]>
+            </line>
+            <line>
+              <![CDATA[Step 3 = Click on change password link and performing change password]]>
+            </line>
+            <line>
+              <![CDATA[Step 4 = Click on logout, and login as new password]]>
+            </line>
+            <line>
+              <![CDATA[Step 6 = Click on change password and reverting to original password]]>
+            </line>
+            <line>
+              <![CDATA[Step 7 = Verify that user is logged in or not]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login_ChangePassword -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@57baeedf]" name="tearDown" is-config="true" duration-ms="817" started-at="2018-11-22T13:54:09Z" finished-at="2018-11-22T13:54:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- AER.FMDP_Automation.tests.login.LoginTests -->
+    </test> <!-- RunningOnChrome -->
+  </suite> <!-- RegressionSuit -->
 </testng-results>

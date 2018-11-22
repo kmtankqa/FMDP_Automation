@@ -69,10 +69,21 @@ public class UserSetupPO
 		@FindBy(id="MainContent_txtDescription")
 		private WebElement description;
 		
-		//Feature Details section
+	//Feature Details section
 		@FindBy(css=".innerTable tbody ol[id='chklstAccessibleFeatures'] > li > input")
 		public List<WebElement> featureAccess;
 
+	//User summary grid
+		@FindBy(css=".gridtdHeight:nth-of-type(2) > td input[src='../Images/icon-active.png']")
+		public WebElement active;
+		
+		@FindBy(css=".gridtdHeight:nth-of-type(2) > td input[src='../Images/icon-inactive.png']")
+		public WebElement inactive;
+		
+		@FindBy(css=".gridtdHeight:nth-of-type(2) > td input[src='../Images/icon-delete.png']")
+		public WebElement delete;
+		
+		
 		
 		public void clickOnCreateNewUserBtn()
 		{
@@ -140,7 +151,7 @@ public class UserSetupPO
 			}
 		}
 		
-		public void unSelectFeatureAccess() throws InterruptedException
+		public void deselectFeatureAccess() throws InterruptedException
 		{
 			int size = featureAccess.size();
 					
@@ -153,6 +164,13 @@ public class UserSetupPO
 			}
 		}
 		
+		public void setUserStatus(String statusvalue)
+		{		
+			help.setToggleStaus(active, inactive, statusvalue);
+		}
 		
-		
+		public void deleteUserRecord()
+		{
+			delete.click();
+		}
 }

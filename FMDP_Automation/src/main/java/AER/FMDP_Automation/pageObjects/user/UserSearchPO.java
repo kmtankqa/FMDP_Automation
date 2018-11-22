@@ -49,21 +49,20 @@ public class UserSearchPO
 			private WebElement userName;
 		
 			@FindBy(id="chkboxActiveUsers")
-			private WebElement chkboxActiveUsers;
+			private WebElement checkboxActiveUsers;
 		
 			@FindBy(id="chkboxInActiveUsers")
-			private WebElement chkboxInActiveUsers;
-
-			@FindBy(id="MainContent_chkIncludeDeletedAsWell")
-			private WebElement chkboxIncludeDeleteRecord;
+			private WebElement checkboxInActiveUsers;
 		
+			
 		//User Details Page :
 			
 			@FindBy(css=".user-details-box.form-box > table > tbody > tr:nth-of-type(5) > td > textarea")
 			private WebElement description;
 			
-		
-		//Search User Record
+			
+		//Search Criteria :
+			
 			public void search_enterUserID(String userid)
 			{
 				userId.clear();
@@ -78,33 +77,33 @@ public class UserSearchPO
 			
 			public void search_selectCheckboxActiveUser()
 			{
-				if(!chkboxActiveUsers.isSelected())
+				if(!checkboxActiveUsers.isSelected())
 				{
-					list.search_SearchWithSelectCheckbox(chkboxActiveUsers);
+					checkboxActiveUsers.click();
 				}
 			}
 			
 			public void search_unSelectCheckboxActiveUser()
 			{
-				if(chkboxActiveUsers.isSelected())
+				if(checkboxActiveUsers.isSelected())
 				{
-					list.search_SearchWithUnSelectCheckbox(chkboxActiveUsers);
+					checkboxActiveUsers.click();
 				}
 			}
 			
 			public void search_selectCheckboxInactiveUser()
 			{
-				if(!chkboxInActiveUsers.isSelected())
+				if(!checkboxInActiveUsers.isSelected())
 				{
-					list.search_SearchWithSelectCheckbox(chkboxInActiveUsers);
+					checkboxInActiveUsers.click();
 				}
 			}
 			
 			public void search_unSelectCheckboxInactiveUser()
 			{
-				if(chkboxInActiveUsers.isSelected())
+				if(checkboxInActiveUsers.isSelected())
 				{
-					list.search_SearchWithSelectCheckbox(chkboxInActiveUsers);
+					checkboxInActiveUsers.click();
 				}
 			}
 			
@@ -112,18 +111,21 @@ public class UserSearchPO
 			
 	//Search :
 			
-		//Basic Details section : First & last name, contact no, email, user name, password, confirm password
+		//Basic Details section
+			
+			//First & last name, contact no, email, user name, password, confirm password
 			public String getBasicDetailsSectionData(int row, int column)
 			{
 				String cssSelector = ".user-details-box.form-box table tbody tr:nth-of-type(" + row + ") td:nth-of-type(" + column + ") > input";
 				return selenium.waitTillElementIsVisible(By.cssSelector(cssSelector)).getAttribute("value").trim();
 			}
 			
+			//Description
 			public String getDescriptionData()
 			{
 				return description.getText().trim();
-				//return selenium.waitTillElementIsVisible(By.cssSelector(cssSelector)).getAttribute("value").trim();
 			}
+			
 			
 		//Feature Details section
 			public boolean getFeatureAccessData(int row)
@@ -131,5 +133,17 @@ public class UserSearchPO
 				String cssSelector = "ol[id='chklstAccessibleFeatures'] li:nth-of-type(" + row + ") > input";
 				return selenium.waitTillElementIsVisible(By.cssSelector(cssSelector)).isSelected();
 			}
-				
+
+			
+		//User Summary
+			
+			//Grid data: get username, first name, last name
+			public String getUserGridData(int row, int column)
+			{
+				String cssSelector = "[id='griddata'] table tbody tr:nth-of-type(" + row + ") td:nth-of-type(" + column + ")";
+				return selenium.waitTillElementIsVisible(By.cssSelector(cssSelector)).getText().trim();
+			}
+			
+			
 }
+

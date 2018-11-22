@@ -142,6 +142,13 @@ public class CommonLib
 		common.btn_ClickOnReset();
 	}
 	
+	/**
+	 * Click on Include Delete Record checkbox
+	 */
+	public void checkbox_includeDeleteRecord()
+	{
+		common.checkbox_includeDeleteRecord();
+	}
 	
 	
 	

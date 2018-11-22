@@ -64,6 +64,8 @@ public class UserTests
 	private String description_update = JavaHelpers.getPropertyValue(propertyFile, "description_update");
 	private String featureaccess_update = JavaHelpers.getPropertyValue(propertyFile, "featureaccess_update");
 	
+	private String norecord_msg = JavaHelpers.getPropertyValue(propertyFile, "norecord_msg");
+	
 	
 	@BeforeClass
 	@Parameters({ "node", "browser" })
@@ -86,28 +88,29 @@ public class UserTests
 		ex = new ExceptionHandler(driver);
 	}
 
-	/* Test 1 : Verify that user can add general settings details successfully */
+	
+	/* Test 1 : Verify that user can add new User record successfully */
 	@Test(priority = 1)
 	public void user_Add() throws IOException {
 		try {
-			// Step 1 - Navigating and Logging in to Live Application
+			// Step 1 = Navigating and Logging in to Live Application
 			Reporter.log("Step 1 = Login to application at : " + Constants.LIVE_URL + " and loging in with correct credentails");
 			loginlib.loginToApplication(Constants.LIVE_URL, Constants.LIVE_USERNAME, Constants.LIVE_PASSWORD);
 
-			// Step 2- Opening Menu & Navigating to User Management
-			Reporter.log("Step 2 = Opening Menu & Navigating to User Management");
+			// Step 2 = Opening Menu & Navigating to User Management and Open Create New User screen
+			Reporter.log("Step 2 = Opening Menu & Navigating to User Management and Open Create New User screen");
 			navigationlib.menu_ClickOnUserManagement();
+			usersetupadd.clickOnCreateNewUserBtn();
 
-			// Step 3- On Create New User Details page, adding details, click on Save button
-			Reporter.log("Step 3 = On Create New User Details page, adding details, click on Save button");
+			// Step 3 = On Create New User page, adding details, click on Save button
+			Reporter.log("Step 3 = On Create New User page, adding details, click on Save button");
 			email = emailid_add + timeStamp + "@dayrep.com";
 			username = username_add + timeStamp;
-			usersetupadd.clickOnCreateNewUserBtn();
 			usersetupadd.userManagement_Add(firstname_add, lastname_add, contactno_add, email, username, password_add, confirmpassword_add, description_add, featureaccess_add);
 			common.popup_ClickOnSuccessOk();
 
-			// Step 4 = Searching for added general settings details and verifying that it has correct details
-			Reporter.log("Step 4 = Searching for added general settings details and verifying that it has correct details");
+			// Step 4 = Searching for added User record and verifying that it has correct details
+			Reporter.log("Step 4 = Searching for added User record and verifying that it has correct details");
 			navigationlib.menu_ClickOnUserManagement();
 			usersearch.search_SearchUserWithUserNameAndClick(username);
 			
@@ -118,37 +121,37 @@ public class UserTests
 				actual = usersearch.getBasicDetailsSectionData(1, 2);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying Last Name
 				expected = lastname_add;
 				actual = usersearch.getBasicDetailsSectionData(1, 4);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying Contact No.
 				expected = contactno_add;
 				actual = usersearch.getBasicDetailsSectionData(2, 2);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying Email
 				expected = email;
 				actual = usersearch.getBasicDetailsSectionData(2, 4);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying UserName
 				expected = username;
 				actual = usersearch.getBasicDetailsSectionData(3, 2);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying Password
 				expected = password_add;
 				actual = usersearch.getBasicDetailsSectionData(4, 2);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying Confirm Password
 				expected = confirmpassword_add;
 				actual = usersearch.getBasicDetailsSectionData(4, 4);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying Description
 				expected = description_add;
 				actual = usersearch.getDescriptionData();
 				sfassert.assertEquals(actual, expected);
@@ -156,42 +159,43 @@ public class UserTests
 				
 			//Feature Details section :
 				
-				// Verifying settings check-box
+				// Verifying Settings check-box
 				expected = "true";
 				boolean actual_value1 = usersearch.getFeatureAccessData(1);
 				actual = String.valueOf(actual_value1);
 				sfassert.assertEquals(actual, expected);
 				
-				// Verifying settings check-box
+				// Verifying Request check-box
 				boolean actual_value2 = usersearch.getFeatureAccessData(2);
 				actual = String.valueOf(actual_value2);
 				sfassert.assertEquals(actual, expected);
 				
-				// Verifying settings check-box
+				// Verifying Distribution check-box
 				boolean actual_value3 = usersearch.getFeatureAccessData(3);
 				actual = String.valueOf(actual_value3);
 				sfassert.assertEquals(actual, expected);
 				
-				// Verifying settings check-box
+				// Verifying Activity Log check-box
 				boolean actual_value4 = usersearch.getFeatureAccessData(4);
 				actual = String.valueOf(actual_value4);
 				sfassert.assertEquals(actual, expected);
 				
-				// Verifying settings check-box
+				// Verifying User Management check-box
 				boolean actual_value5 = usersearch.getFeatureAccessData(5);
 				actual = String.valueOf(actual_value5);
 				sfassert.assertEquals(actual, expected);
 				
-				// Verifying settings check-box
+				// Verifying Supplier Management check-box
 				boolean actual_value6 = usersearch.getFeatureAccessData(6);
 				actual = String.valueOf(actual_value6);
 				sfassert.assertEquals(actual, expected);
 				
-				// Verifying settings check-box
+				// Verifying Recipient Management check-box
 				boolean actual_value7 = usersearch.getFeatureAccessData(7);
 				actual = String.valueOf(actual_value7);
 				sfassert.assertEquals(actual, expected);
 				
+				// Verifying Analysis check-box
 				boolean actual_value8 = usersearch.getFeatureAccessData(8);
 				actual = String.valueOf(actual_value8);
 				sfassert.assertEquals(actual, expected);
@@ -209,20 +213,20 @@ public class UserTests
 	}
 
 	
-	/*	Test 2 : Verify that user can edit tax category successfully */  
+	/*	Test 2 : Verify that user can edit User details successfully */  
 	@Test(priority = 2, dependsOnMethods = { "user_Add" })
 	public void user_Update() throws IOException {
 		try {
-			// Step 1 = Editing added generate settings details
-			Reporter.log("Step 1 = Editing added generate settings details");
+			// Step 1 = Editing details of added User record, click on Save button
+			Reporter.log("Step 1 = Editing details of added User record, click on Save button");
 			selenium.refreshPage();
 			email = emailid_update + timeStamp + "@dayrep.com";
 			username = username_update + timeStamp;
 			usersetupadd.userManagement_Add(firstname_update, lastname_update, contactno_update, email, username, password_update, confirmpassword_update, description_update, featureaccess_update);
 			common.popup_ClickOnSuccessOk();
 			
-			// Step 2 = Searching for edited general settings details and verifying that it has correct
-			Reporter.log("Step 2 = Searching for edited general settings details and verifying that it has correct");
+			// Step 2 = Searching for edited User record and verifying that it has correct details
+			Reporter.log("Step 2 = Searching for edited User record and verifying that it has correct details");
 			navigationlib.menu_ClickOnUserManagement();
 			usersearch.search_SearchUserWithUserNameAndClick(username);
 			
@@ -233,37 +237,37 @@ public class UserTests
 				actual = usersearch.getBasicDetailsSectionData(1, 2);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying Last Name
 				expected = lastname_update;
 				actual = usersearch.getBasicDetailsSectionData(1, 4);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying Contact No.
 				expected = contactno_update;
 				actual = usersearch.getBasicDetailsSectionData(2, 2);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying Email
 				expected = email;
 				actual = usersearch.getBasicDetailsSectionData(2, 4);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying UserName
 				expected = username;
 				actual = usersearch.getBasicDetailsSectionData(3, 2);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying Password
 				expected = password_update;
 				actual = usersearch.getBasicDetailsSectionData(4, 2);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying Confirm Password
 				expected = confirmpassword_update;
 				actual = usersearch.getBasicDetailsSectionData(4, 4);
 				sfassert.assertEquals(actual, expected);
 				
-				//Verifying First Name
+				//Verifying Description
 				expected = description_update;
 				actual = usersearch.getDescriptionData();
 				sfassert.assertEquals(actual, expected);
@@ -271,43 +275,43 @@ public class UserTests
 			
 			//Feature Details section :
 				
-				// Verifying settings check-box
+				// Verifying Settings check-box
 				expected = "false";
 				boolean actual_value1 = usersearch.getFeatureAccessData(1);
 				actual = String.valueOf(actual_value1);
 				sfassert.assertEquals(actual, expected);
 				
-				// Verifying settings check-box
+				// Verifying Request check-box
 				boolean actual_value2 = usersearch.getFeatureAccessData(2);
 				actual = String.valueOf(actual_value2);
 				sfassert.assertEquals(actual, expected);
 				
-				// Verifying settings check-box
+				// Verifying Distribution check-box
 				boolean actual_value3 = usersearch.getFeatureAccessData(3);
 				actual = String.valueOf(actual_value3);
 				sfassert.assertEquals(actual, expected);
 				
-				// Verifying settings check-box
+				// Verifying Activity Log check-box
 				boolean actual_value4 = usersearch.getFeatureAccessData(4);
 				actual = String.valueOf(actual_value4);
 				sfassert.assertEquals(actual, expected);
 				
-				// Verifying settings check-box
+				// Verifying User Management check-box
 				boolean actual_value5 = usersearch.getFeatureAccessData(5);
 				actual = String.valueOf(actual_value5);
 				sfassert.assertEquals(actual, expected);
 				
-				// Verifying settings check-box
+				// Verifying Supplier Management check-box
 				boolean actual_value6 = usersearch.getFeatureAccessData(6);
 				actual = String.valueOf(actual_value6);
 				sfassert.assertEquals(actual, expected);
 				
-				// Verifying settings check-box
+				// Verifying Recipient Management check-box
 				boolean actual_value7 = usersearch.getFeatureAccessData(7);
 				actual = String.valueOf(actual_value7);
 				sfassert.assertEquals(actual, expected);
 				
-				// Verifying settings check-box
+				// Verifying Analysis check-box
 				expected = "true";
 				boolean actual_value8 = usersearch.getFeatureAccessData(8);
 				actual = String.valueOf(actual_value8);
@@ -323,6 +327,102 @@ public class UserTests
 		}
 	}
 
+	
+	/*	Test 3 : Verify that user can Inactive User record successfully */  
+	@Test(priority = 3, dependsOnMethods = { "user_Update" })
+	public void user_Inactive() throws IOException {
+		try {
+			// Step 1 = Searching for added user and inactivating user
+			Reporter.log("Step 1 = Searching for added user and inactivating user");
+			navigationlib.menu_ClickOnUserManagement();
+			usersearch.search_SearchUserWithUserName(username);
+			
+			String status = "Inactive";
+			usersetupadd.user_changeStatus(status);
+			navigationlib.logout();
+			
+			// Step 2 = Verify the inactive user can't login
+			Reporter.log("Step 2 = Verify the inactive user can't login");
+			loginlib.loginToApplication(Constants.LIVE_URL, username, password_update);
+			
+				// Verifying login error for Inactive user
+				expected = "User: '" + username + "' is either inactive or deleted. Please contact the administrator.";
+				actual = loginlib.getErrorMessage();
+				sfassert.assertEquals(actual, expected);
+			
+			
+			// soft assert
+			sfassert.assertAll();
+		}
+		catch (AssertionError | Exception e)
+		{
+			ex.TakeScreenshotAndLogException(e.getMessage());
+		}
+	}
+	
+	
+	/*	Test 4 : Verify that user can Delete user record successfully */  
+	@Test(priority = 4, dependsOnMethods = { "user_Inactive" })
+	public void user_Delete() throws IOException {
+		try {
+			// Step 1 = Searching for added & inactivated user and Deleting it
+			Reporter.log("Step 1 = Searching for added & inactivated user and Deleting it");
+			loginlib.loginToApplication(Constants.LIVE_URL, Constants.LIVE_USERNAME, Constants.LIVE_PASSWORD);
+			navigationlib.menu_ClickOnUserManagement();
+			usersearch.search_SearchUserWithUserName(username);
+			usersetupadd.user_deleteRecord();
+
+			// Step 2 = Verify the deleted user record is not present, it display on screen after select 'Include deleted records' option
+			Reporter.log("Step 2 = Verify the deleted user record is not present, it display on screen after select 'Include deleted records' option");
+			navigationlib.menu_ClickOnUserManagement();
+			usersearch.search_userWithUserName(username);
+
+				//Verifying No Record Message
+				expected = norecord_msg;
+				actual = usersearch.search_GetNoRecordMsgText();
+				sfassert.assertEquals(actual, expected);
+			
+			common.checkbox_includeDeleteRecord();
+			
+			//Grid data :
+			
+				//Verifying username
+				expected = username;
+				actual = usersearch.getUserGridData(2, 4);
+				sfassert.assertEquals(actual, expected);
+			
+				//Verifying First Name
+				expected = firstname_update;
+				actual = usersearch.getUserGridData(2, 5);
+				sfassert.assertEquals(actual, expected);
+			
+				//Verifying Last Name
+				expected = lastname_update;
+				actual = usersearch.getUserGridData(2, 6);
+				sfassert.assertEquals(actual, expected);
+			
+			navigationlib.logout();
+			
+			// Step 3 = Verify the inactive user can't do login
+			Reporter.log("Step 3 = Verify the inactive user can't do login");
+			loginlib.loginToApplication(Constants.LIVE_URL, username, password_update);
+			
+				// Verifying login error for Deleted user
+				expected = "User: '" + username + "' is either inactive or deleted. Please contact the administrator.";
+				actual = loginlib.getErrorMessage();
+				sfassert.assertEquals(actual, expected);
+				
+				
+			// soft assert
+			sfassert.assertAll();
+		}
+		catch (AssertionError | Exception e)
+		{
+			ex.TakeScreenshotAndLogException(e.getMessage());
+		}
+	}
+	
+	
 	@AfterClass
 	public void tearDown() throws Exception {
 		drivermanager.tearDown();
