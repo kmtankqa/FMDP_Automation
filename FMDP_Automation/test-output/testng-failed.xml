@@ -3,17 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="AER.FMDP_Automation.tests.user.UserTests">
+      <class name="AER.FMDP_Automation.tests.recipient.RecipientTests">
         <methods>
-          <include name="user_Inactive"/>
-          <include name="setUp"/>
-          <include name="user_Delete"/>
-          <include name="user_Add"/>
+          <include name="recipient_Add"/>
           <include name="tearDown"/>
-          <include name="user_Update"/>
+          <include name="setUp"/>
+          <include name="recipient_Delete"/>
+          <include name="recipient_Update"/>
+          <include name="recipient_Inactive"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- AER.FMDP_Automation.tests.user.UserTests -->
+      </class> <!-- AER.FMDP_Automation.tests.recipient.RecipientTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

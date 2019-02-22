@@ -190,4 +190,10 @@ public class CommonLib
 		common.setToggleValue(toggle, isactive, value);
 	}
 	
+	
+	public void testFtpConnection(String message)
+	{
+		
+	}
+	
 }

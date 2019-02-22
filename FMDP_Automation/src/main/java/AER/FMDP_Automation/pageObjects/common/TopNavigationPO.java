@@ -52,6 +52,8 @@ public class TopNavigationPO
 		@FindBy(css=".topnav> ul > li:nth-of-type(5) > a")
 		public WebElement userManagementMenu;
 		
+		@FindBy(css=".topnav> ul > li:nth-of-type(7) > a")
+		public WebElement recipientManagementMenu;
 		
 	//Home Page banner images
 		@FindBy(id="MainContent_imgbtnSettings")
@@ -301,6 +303,15 @@ public class TopNavigationPO
 			userManagementMenu.click();
 		}
 		
+		
+	//Recipient Management
+		
+		//Click on Recipient Management
+		public void menu_ClickOnRecipientManagement()
+		{
+			recipientManagementMenu.click();
+		}
+	
 		
 	//Operations
 		

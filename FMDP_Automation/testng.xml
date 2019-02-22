@@ -26,10 +26,11 @@
 	       <class name="au.com.shortcuts.live.tests.rosters.RostersTests"/>
 	       <class name="au.com.shortcuts.live.tests.tools.ClientImportTests"/> -->
 	       
-	       <class name="AER.FMDP_Automation.tests.login.LoginTests"/>
+	   	   <class name="AER.FMDP_Automation.tests.login.LoginTests"/>
 	       <class name="AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests"/>
 	       <class name="AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests"/>
 	       <class name="AER.FMDP_Automation.tests.user.UserTests"/>
+	       <class name="AER.FMDP_Automation.tests.recipient.RecipientTests"/>
 	    </classes>
   </test>
   

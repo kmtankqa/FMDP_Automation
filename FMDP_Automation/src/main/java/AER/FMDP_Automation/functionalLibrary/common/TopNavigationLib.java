@@ -156,6 +156,17 @@ public class TopNavigationLib
 		topnavigation.menu_ClickOnUserManagement();
 	}
 	
+	
+	//User Management
+	
+	/**
+	 * Click on Recipient Management Menu
+	 */
+	public void menu_ClickOnRecipientManagement()
+	{
+		topnavigation.menu_ClickOnRecipientManagement();
+	}
+	
 	//Operations
 	
 	/**

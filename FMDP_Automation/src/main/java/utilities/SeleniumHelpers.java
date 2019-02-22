@@ -115,7 +115,6 @@ public class SeleniumHelpers
 		 wait.until(ExpectedConditions.invisibilityOf(e));
 	}
 	
-	
 	//Dropdown
 	public void selectDropdownValueByText(WebElement e, String text)
 	{
@@ -175,6 +174,20 @@ public class SeleniumHelpers
 		String jsscript = "arguments[0].setAttribute(arguments[1], arguments[2])";
 		jse.executeScript(jsscript,e,attribute,value);
 	}
+	
+	//Web Element Status
+	public boolean getElementStatus(WebElement e)
+	{
+		if (e.isEnabled())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
 
 }
 
