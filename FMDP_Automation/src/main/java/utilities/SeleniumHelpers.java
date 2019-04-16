@@ -2,6 +2,7 @@ package utilities;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -189,5 +190,19 @@ public class SeleniumHelpers
 	}
 	
 
+	public void SelectDateFromDatePicker(WebElement m, String month, WebElement y, String year, List<WebElement> d, String date)
+    {
+		selectDropdownValueByText(m, month);
+		selectDropdownValueByText(y, year);
+
+		for (WebElement webElement : d)
+		{
+			if (webElement.getText().equalsIgnoreCase(date))
+			{
+				webElement.click();
+			}
+		}
+	}
+	
 }
 

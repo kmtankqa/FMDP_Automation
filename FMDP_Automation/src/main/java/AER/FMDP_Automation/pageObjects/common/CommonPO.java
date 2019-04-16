@@ -111,6 +111,10 @@ public class CommonPO
 		By slider= By.cssSelector("div.slide");
 		
 		
+		//Date Picker window after any action on date textbox
+		By datapicker = By.id("ui-datepicker-div");
+		
+		
 		//Common validation pop up
 		
 		By validationTextFromBottomRightPopUp = By.cssSelector("div.ctrl-slidePrompt > div");
@@ -118,6 +122,7 @@ public class CommonPO
 		By yesButtonOnBottomRightPopUp= By.name("yes");
 		
 		
+		//Date Picker
 		
 	
 		
@@ -272,6 +277,11 @@ public class CommonPO
 			selenium.waitTillElementIsNOTVisible(slider);	
 		}
 	
+		//wait till Date Picker loaded completely
+		public void waitTillDatePickerLoaded()
+		{
+			selenium.waitTillElementIsNOTVisible(datapicker);
+		}
 		
 		//Global validation pop up on bottom right
 		
@@ -333,6 +343,12 @@ public class CommonPO
 			{
 				active.click();
 			}
+		}
+		
+		
+		public void datapicker_selectDae()
+		{
+			
 		}
 		
 }

@@ -3,10 +3,51 @@
 <suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [RegressionSuit]" parallel="tests">
   <test thread-count="2" name="RunningOnChrome(failed)" parallel="classes">
     <parameter name="node" value="local"/>
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="ie"/>
     <classes>
+      <class name="AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="mnSetting_Update"/>
+          <include name="mnSetting_Add"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests -->
+      <class name="AER.FMDP_Automation.tests.login.LoginTests">
+        <methods>
+          <include name="login_Failure"/>
+          <include name="login_ChangePassword"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- AER.FMDP_Automation.tests.login.LoginTests -->
+      <class name="AER.FMDP_Automation.tests.user.UserTests">
+        <methods>
+          <include name="user_Inactive"/>
+          <include name="setUp"/>
+          <include name="user_Delete"/>
+          <include name="user_Add"/>
+          <include name="tearDown"/>
+          <include name="user_Update"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- AER.FMDP_Automation.tests.user.UserTests -->
+      <class name="AER.FMDP_Automation.tests.recipient.RecipientTests">
+        <methods>
+          <include name="recipient_Add"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="recipient_Delete"/>
+          <include name="recipient_Update"/>
+          <include name="recipient_Inactive"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- AER.FMDP_Automation.tests.recipient.RecipientTests -->
       <class name="AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests">
         <methods>
+          <include name="generalSetting_Update"/>
           <include name="beforeMethod"/>
           <include name="setUp"/>
           <include name="tearDown"/>

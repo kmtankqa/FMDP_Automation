@@ -55,6 +55,9 @@ public class TopNavigationPO
 		@FindBy(css=".topnav> ul > li:nth-of-type(7) > a")
 		public WebElement recipientManagementMenu;
 		
+		@FindBy(css=".topnav> ul > li:nth-of-type(6) > a")
+		public WebElement supplierManagementMenu;
+		
 	//Home Page banner images
 		@FindBy(id="MainContent_imgbtnSettings")
 		public WebElement settingsBannerImage;
@@ -312,6 +315,13 @@ public class TopNavigationPO
 			recipientManagementMenu.click();
 		}
 	
+	//Supplier Management
+	
+		//Click on Supplier Management
+		public void menu_ClickOnSupplierManagement()
+		{
+			supplierManagementMenu.click();
+		}
 		
 	//Operations
 		

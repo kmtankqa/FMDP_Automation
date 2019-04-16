@@ -167,6 +167,18 @@ public class TopNavigationLib
 		topnavigation.menu_ClickOnRecipientManagement();
 	}
 	
+	
+	//Supplier Management
+	
+	/**
+	 * Click on Supplier Management Menu
+	 */
+	public void menu_ClickOnSupplierManagement()
+	{
+		topnavigation.menu_ClickOnSupplierManagement();
+	}
+	
+	
 	//Operations
 	
 	/**

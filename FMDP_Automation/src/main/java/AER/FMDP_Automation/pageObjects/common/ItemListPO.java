@@ -39,7 +39,7 @@ public class ItemListPO
 	
 	//Search section
 	
-		@FindBy(css="div[id='griddata'] > table > tbody tr td:nth-of-type(3) > a")
+		@FindBy(css="div[id='griddata'] > table > tbody > tr > td:nth-of-type(5) > a")
 		private WebElement search_FirstItem;
 	
 		@FindBy(css=".no-records > span")

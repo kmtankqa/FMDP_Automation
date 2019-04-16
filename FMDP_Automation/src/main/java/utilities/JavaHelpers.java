@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 //import java.util.Random;
 import java.util.Properties;
@@ -67,6 +68,24 @@ public class JavaHelpers
 	public String timeStamp()
 	{
 		return getTimeStamp("_yyyyMMdd_HHmmss");
+	}
+	
+	public String currentDate()
+	{
+		String pattern = "yyyy-MM-dd";
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+		String date = simpleDateFormat.format(new Date());
+		return date;
+	}
+	
+	public int currentHour()
+	{
+		return LocalDateTime.now().getHour();
+	}
+	
+	public int currentMinute()
+	{
+		return LocalDateTime.now().getMinute();
 	}
 	
 	public void sleep(int seconds) throws InterruptedException
