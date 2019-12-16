@@ -53,9 +53,9 @@ public class UserSearchLib
 					searchpo.search_enterUserName(searchvalue);
 					help.btn_ClickOnSearch();
 					
-					if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+					if (itemlist.search_IsFirstSearchedItemDisplayedRecipientOrUser()) 
 					{
-						itemlist.search_ClickOnFirstSearchedItem();
+						itemlist.search_ClickOnFirstSearchedItemRecipientOrUser();
 						isfirstitem = true;
 						break;
 					}
@@ -70,9 +70,9 @@ public class UserSearchLib
 					searchpo.search_enterUserID(searchvalue);
 					help.btn_ClickOnSearch();
 					
-					if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+					if (itemlist.search_IsFirstSearchedItemDisplayedRecipientOrUser()) 
 					{
-						itemlist.search_ClickOnFirstSearchedItem();
+						itemlist.search_ClickOnFirstSearchedItemRecipientOrUser();
 						isfirstitem = true;
 						break;
 					}
@@ -137,7 +137,7 @@ public class UserSearchLib
 				searchpo.search_enterUserName(searchvalue);
 				help.btn_ClickOnSearch();
 				
-				if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+				if (itemlist.search_IsFirstSearchedItemDisplayedRecipientOrUser()) 
 				{
 					isfirstitem = true;
 					break;
@@ -176,7 +176,7 @@ public class UserSearchLib
 				searchpo.search_enterUserID(searchvalue);
 				help.btn_ClickOnSearch();
 				
-				if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+				if (itemlist.search_IsFirstSearchedItemDisplayedRecipientOrUser()) 
 				{
 					isfirstitem = true;
 					break;
@@ -215,9 +215,9 @@ public class UserSearchLib
 				searchpo.search_enterUserName(searchvalue);
 				help.btn_ClickOnSearch();
 				
-				if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+				if (itemlist.search_IsFirstSearchedItemDisplayedRecipientOrUser()) 
 				{
-					itemlist.search_ClickOnFirstSearchedItem();
+					itemlist.search_ClickOnFirstSearchedItemRecipientOrUser();
 					isfirstitem = true;
 					break;
 				}
@@ -255,9 +255,9 @@ public class UserSearchLib
 				searchpo.search_enterUserID(searchvalue);
 				help.btn_ClickOnSearch();
 				
-				if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+				if (itemlist.search_IsFirstSearchedItemDisplayedRecipientOrUser()) 
 				{
-					itemlist.search_ClickOnFirstSearchedItem();
+					itemlist.search_ClickOnFirstSearchedItemRecipientOrUser();
 					isfirstitem = true;
 					break;
 				}

@@ -53,9 +53,9 @@ public class SupplierSearchLib
 					searchpo.search_enterSupplierName(searchvalue);
 					help.btn_ClickOnSearch();
 					
-					if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+					if (itemlist.search_IsFirstSearchedItemDisplayedSupplierOrDistribution()) 
 					{
-						itemlist.search_ClickOnFirstSearchedItem();
+						itemlist.search_ClickOnFirstSearchedItemSupplierOrDistribution();
 						isfirstitem = true;
 						break;
 					}
@@ -70,9 +70,9 @@ public class SupplierSearchLib
 					searchpo.search_enterSupplierID(searchvalue);
 					help.btn_ClickOnSearch();
 					
-					if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+					if (itemlist.search_IsFirstSearchedItemDisplayedSupplierOrDistribution()) 
 					{
-						itemlist.search_ClickOnFirstSearchedItem();
+						itemlist.search_ClickOnFirstSearchedItemSupplierOrDistribution();
 						isfirstitem = true;
 						break;
 					}
@@ -137,7 +137,7 @@ public class SupplierSearchLib
 				searchpo.search_enterSupplierName(searchvalue);
 				help.btn_ClickOnSearch();
 				
-				if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+				if (itemlist.search_IsFirstSearchedItemDisplayedSupplierOrDistribution()) 
 				{
 					isfirstitem = true;
 					break;
@@ -176,7 +176,7 @@ public class SupplierSearchLib
 				searchpo.search_enterSupplierName(searchvalue);
 				help.btn_ClickOnSearch();
 				
-				if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+				if (itemlist.search_IsFirstSearchedItemDisplayedSupplierOrDistribution()) 
 				{
 					isfirstitem = true;
 					break;
@@ -215,7 +215,7 @@ public class SupplierSearchLib
 				searchpo.search_enterSupplierName(searchvalue);
 				help.btn_ClickOnSearch();
 				
-				if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+				if (itemlist.search_IsFirstSearchedItemDisplayedSupplierOrDistribution()) 
 				{
 					isfirstitem = true;
 					break;
@@ -254,9 +254,9 @@ public class SupplierSearchLib
 				searchpo.search_enterSupplierName(searchvalue);
 				help.btn_ClickOnSearch();
 				
-				if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+				if (itemlist.search_IsFirstSearchedItemDisplayedSupplierOrDistribution()) 
 				{
-					itemlist.search_ClickOnFirstSearchedItem();
+					itemlist.search_ClickOnFirstSearchedItemSupplierOrDistribution();
 					isfirstitem = true;
 					break;
 				}
@@ -294,9 +294,9 @@ public class SupplierSearchLib
 				searchpo.search_enterSupplierName(searchvalue);
 				help.btn_ClickOnSearch();
 				
-				if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+				if (itemlist.search_IsFirstSearchedItemDisplayedSupplierOrDistribution()) 
 				{
-					itemlist.search_ClickOnFirstSearchedItem();
+					itemlist.search_ClickOnFirstSearchedItemSupplierOrDistribution();
 					isfirstitem = true;
 					break;
 				}
@@ -351,7 +351,7 @@ public class SupplierSearchLib
 				
 				help.btn_ClickOnSearch();
 				
-				if (itemlist.search_IsFirstSearchedItemDisplayed()) 
+				if (itemlist.search_IsFirstSearchedItemDisplayedSupplierOrDistribution()) 
 				{
 					isfirstitem = true;
 					break;

@@ -58,6 +58,12 @@ public class TopNavigationPO
 		@FindBy(css=".topnav> ul > li:nth-of-type(6) > a")
 		public WebElement supplierManagementMenu;
 		
+		@FindBy(css=".topnav> ul > li:nth-of-type(3) > a")
+		public WebElement distribution;
+		
+		@FindBy(css=".topnav> ul > li:nth-of-type(3) > ul > li:nth-of-type(1) > a")
+		public WebElement distributionSummaryMenu;
+		
 	//Home Page banner images
 		@FindBy(id="MainContent_imgbtnSettings")
 		public WebElement settingsBannerImage;
@@ -321,6 +327,15 @@ public class TopNavigationPO
 		public void menu_ClickOnSupplierManagement()
 		{
 			supplierManagementMenu.click();
+		}
+		
+	//Distribution Management
+		
+		//Click on Distribution Summary
+		public void menu_ClickOnDistributionSummary()
+		{
+			action.moveToElement(distribution).build().perform();
+			distributionSummaryMenu.click();
 		}
 		
 	//Operations

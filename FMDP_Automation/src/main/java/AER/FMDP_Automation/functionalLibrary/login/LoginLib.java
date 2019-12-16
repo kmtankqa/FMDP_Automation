@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 
 import AER.FMDP_Automation.functionalLibrary.common.CommonLib;
 import AER.FMDP_Automation.pageObjects.login.LoginPO;
+import io.qameta.allure.Step;
 import utilities.SeleniumHelpers;
 
 public class LoginLib 
@@ -40,6 +41,7 @@ public class LoginLib
 	 * @param username username
 	 * @param password password
 	 */
+	@Step("Login with the username: {0}, password: {}, for method: {method} step...")
 	public void loginToApplication(String username, String password)
 	{
 		loginpo.enterUsername(username);

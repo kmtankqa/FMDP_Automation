@@ -39,9 +39,12 @@ public class ItemListPO
 	
 	//Search section
 	
-		@FindBy(css="div[id='griddata'] > table > tbody > tr > td:nth-of-type(5) > a")
-		private WebElement search_FirstItem;
+		@FindBy(css="div[id='griddata'] > table > tbody > tr > td:nth-of-type(3) > a")
+		private WebElement search_FirstItem_Column3;
 	
+		@FindBy(css="div[id='griddata'] > table > tbody > tr > td:nth-of-type(5) > a")
+		private WebElement search_FirstItem_Column5;
+		
 		@FindBy(css=".no-records > span")
 		private WebElement search_NoRecordMsg;	
 				
@@ -76,23 +79,22 @@ public class ItemListPO
 			}
 			
 			
-			public void search_ClickOnFirstSearchedItem()
+			public void search_ClickOnFirstSearchedItemRecipientOrUser()
 			{	
-				selenium.waitTillElementIsClickable(search_FirstItem).click();
+				selenium.waitTillElementIsClickable(search_FirstItem_Column3).click();
 			}
 			
-			
-			public void search_ClickOnFirstSearchedItem(WebElement e)
-			{
-				selenium.waitTillElementIsClickable(e).click();
+			public void search_ClickOnFirstSearchedItemSupplierOrDistribution()
+			{	
+				selenium.waitTillElementIsClickable(search_FirstItem_Column5).click();
 			}
 			
-			
-			public boolean search_IsFirstSearchedItemDisplayed()
+						
+			public boolean search_IsFirstSearchedItemDisplayedRecipientOrUser()
 			{
 				try 
 				{
-		            return search_FirstItem.isDisplayed();
+		            return search_FirstItem_Column3.isDisplayed();
 				} 
 				catch (Exception e) 
 				{
@@ -100,6 +102,23 @@ public class ItemListPO
 		        }
 			}
 
+			public boolean search_IsFirstSearchedItemDisplayedSupplierOrDistribution()
+			{
+				try 
+				{
+		            return search_FirstItem_Column5.isDisplayed();
+				} 
+				catch (Exception e) 
+				{
+		            return false;
+		        }
+			}
+			
+			public void search_ClickOnFirstSearchedItem(WebElement e)
+			{
+				selenium.waitTillElementIsClickable(e).click();
+			}
+			
 			
 			public String search_GetNoRecordMsgText()
 			{

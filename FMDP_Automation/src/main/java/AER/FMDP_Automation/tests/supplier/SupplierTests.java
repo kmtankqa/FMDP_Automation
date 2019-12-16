@@ -45,6 +45,7 @@ public class SupplierTests
 	
 	private String suppliername_create = JavaHelpers.getPropertyValue(propertyFile, "suppliername_create");
 	private String suppliername;
+	private String suppliername_copy;
 	private String faretype_create = JavaHelpers.getPropertyValue(propertyFile, "faretype_create");
 	private String source_create = JavaHelpers.getPropertyValue(propertyFile, "source_create");
 	private String officeid_create = JavaHelpers.getPropertyValue(propertyFile, "officeid_create");
@@ -468,10 +469,177 @@ public class SupplierTests
 			ex.TakeScreenshotAndLogException(e.getMessage());
 		}
 	}
-
-
-	/* Test 3 : Verify that user can Inactive User record successfully */     
+	
+	
+	/* Test 3 : Verify that user can copy existing Recipient record successfully */   
 	@Test(priority = 3, dependsOnMethods = { "supplier_Update" })
+	public void supplier_Copy() throws IOException {
+		try {
+			// Step 1 = Search existing record and Copy supplier, click on Save button
+			Reporter.log("Step 1 = Search existing record and Copy supplier, click on Save button");
+			navigationlib.menu_ClickOnSupplierManagement();
+			suppliersearch.search_SearchActiveSupplierWithSupplierName(suppliername);
+			suppliersetupadd.supplier_copyRecord();
+			suppliername_copy = suppliername_create + timeStamp;		
+			suppliersetupadd.enterSupplierName(suppliername_copy);
+			common.popup_ClickOnSuccessOk();
+			
+			// Step 2 = Searching for Copied Recipient record and verifying that it is added successfully
+			Reporter.log("Step 2 = Searching for Copied Recipient record and verifying that it is added successfully");
+			navigationlib.menu_ClickOnSupplierManagement();
+			suppliersearch.search_SearchActiveSupplierWithSupplierName(suppliername_copy);
+			
+			//Grid data :
+			
+				//Verifying Recipient Name
+				expected = suppliername_copy;
+				actual = suppliersearch.getSupplierGridData(2, 6);
+				sfassert.assertEquals(actual, expected);
+			
+				//Verifying FTP Path
+				expected = sftplocation_update;
+				actual = suppliersearch.getSupplierGridData(2, 7);
+				sfassert.assertEquals(actual, expected);
+							
+			// Step 3 = Searching for Copied Recipient record and verifying that it has correct details
+			Reporter.log("Step 3 = Searching for Copied Recipient record and verifying that it has correct details");
+			navigationlib.menu_ClickOnSupplierManagement();
+			suppliersearch.search_SearchActiveSupplierWithSupplierNameAndClick(suppliername_copy);
+
+			//General Details section :
+
+				//Verifying Supplier Name
+				expected = suppliername_copy;
+				actual = suppliersearch.getGeneralDetailsSectionData(1, 2);
+				sfassert.assertEquals(actual, expected);
+			
+				//Verifying Fare Type
+				expected = "true";
+				boolean actual_faretype = suppliersearch.getGeneralDetailsFareTypesAndGDSData(2, 2, 4);
+				actual = String.valueOf(actual_faretype);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying Source
+				expected = source_update;
+				actual = suppliersearch.getGeneralDetailsSectionData(4, 2);
+				sfassert.assertEquals(actual, expected);
+			
+				//Verifying Office ID
+				expected = officeid_update;
+				actual = suppliersearch.getGeneralDetailsSectionData(6, 2);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying Corporate Code
+				expected = corporatecode_update;
+				actual = suppliersearch.getGeneralDetailsSectionData(7, 2);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying GDS
+				expected = "true";
+				boolean actual_gds = suppliersearch.getGeneralDetailsFareTypesAndGDSData(8, 2, 2);
+				actual = String.valueOf(actual_gds);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying Flight Type
+				boolean actual_flighttype = suppliersearch.getGeneralDetailsFlightTypeAndFilterNoBagFareData(9, 2, 1);
+				actual = String.valueOf(actual_flighttype);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying Filter No Bag Fare
+				expected = "false";
+				boolean actual_filternobagfare = suppliersearch.getGeneralDetailsFlightTypeAndFilterNoBagFareData(10, 2, 1);
+				actual = String.valueOf(actual_filternobagfare);
+				sfassert.assertEquals(actual, expected);
+			
+			//EDF Import Details section :
+				
+	/*			//Verifying Frequency
+				expected = "true";
+				boolean actual_frequency = suppliersearch.getEDFImportDetailsSectionData(1, 2, 2);
+				actual = String.valueOf(actual_frequency);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying Delete File Checkbox
+				boolean actual_chkdeletefile = suppliersearch.getEDFImportDetailsSectionData(2, 2, 1);
+				actual = String.valueOf(actual_chkdeletefile);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying Notify Administrator Checkbox for Size Vary
+				boolean actual_chksizevarynotify = suppliersearch.getEDFImportDetailsSectionData(3, 2, 1);
+				actual = String.valueOf(actual_chksizevarynotify);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying Percentage
+				expected = sizevarypercentage_create;
+				actual = suppliersearch.getEDFImportDetailsSectionPercentageAndDaysFieldData(3, 2, 2);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying Notify Administrator Checkbox for File Not Received 
+				expected = "true";
+				boolean actual_chkfilenotreceivenotify = suppliersearch.getEDFImportDetailsSectionData(4, 2, 1);
+				actual = String.valueOf(actual_chkfilenotreceivenotify);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying Days
+				expected = filenotreceiveddays_create;
+				actual = suppliersearch.getEDFImportDetailsSectionPercentageAndDaysFieldData(4, 2, 2);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying Data Retention
+				expected = dataretention_create;
+				actual = suppliersearch.getEDFImportDetailsSectionPercentageAndDaysFieldData(5, 2, 1);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying Hours
+				expected = hours_create;
+				actual = suppliersearch.getSelectedHourDropdownValue();
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying Minutes
+				expected = minutes_update;
+				actual = suppliersearch.getSelectedMinuteDropdownValue();
+				sfassert.assertEquals(actual, expected);*/				
+			
+			//FTP and EDF Path Details section :
+				
+				//Verifying FTP Location
+				expected = sftplocation_update;
+				actual = suppliersearch.getFTPDetailsSectionData(1, 2);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying FTP UserName
+				expected = sftpusername_update;
+				actual = suppliersearch.getFTPDetailsSectionData(3, 2);
+				sfassert.assertEquals(actual, expected);
+				
+		/*		//Verifying FTP Password
+				expected = sftppassword_update;
+				actual = suppliersearch.getFTPDetailsSectionData(4, 2);
+				sfassert.assertEquals(actual, expected);*/
+				
+				//Verifying File Pattern
+				expected = filepattern;
+				actual = suppliersearch.getFTPDetailsSectionData(1, 4);
+				sfassert.assertEquals(actual, expected);
+				
+				//Verifying File Location
+				expected = filelocation_update;
+				actual = suppliersearch.getEDFPathDetails();
+				sfassert.assertEquals(actual, expected);
+
+
+			// soft assert
+			sfassert.assertAll();
+		}
+		catch (AssertionError | Exception e)
+		{
+			ex.TakeScreenshotAndLogException(e.getMessage());
+		}
+	}
+	
+
+	/* Test 4 : Verify that user can Inactive User record successfully */     
+	@Test(priority = 4, dependsOnMethods = { "supplier_Update" })
 	public void supplier_Inactive() throws IOException {
 		try {
 			// Step 1 = Searching for added recipient and inactivating recipient
@@ -512,8 +680,8 @@ public class SupplierTests
 	}
 	
 	
-	/* Test 4 : Verify that user Delete recipient record successfully */      
-	@Test(priority = 4, dependsOnMethods = { "supplier_Inactive" })
+	/* Test 5 : Verify that user Delete recipient record successfully */      
+	@Test(priority = 5, dependsOnMethods = { "supplier_Inactive" })
 	public void supplier_Delete() throws IOException {
 		try {
 			// Step 1 = Searching for added & inactivated recipient and Deleting it

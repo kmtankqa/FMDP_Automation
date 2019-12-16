@@ -15,6 +15,7 @@ import org.testng.asserts.SoftAssert;
 import AER.FMDP_Automation.functionalLibrary.common.CommonLib;
 import AER.FMDP_Automation.functionalLibrary.common.TopNavigationLib;
 import AER.FMDP_Automation.functionalLibrary.login.LoginLib;
+import io.qameta.allure.Description;
 import utilities.Constants;
 import utilities.ExceptionHandler;
 import utilities.JavaHelpers;
@@ -63,7 +64,8 @@ public class LoginTests
 	
 	
 	/*Test 1 : Verify that user can't login with incorrect credentials */
-	@Test (priority = 1)
+	@Test (priority = 1, description="Invalid Login Scenario with wrong username and password.")
+	@Description("Test Description: Login test with wrong username and wrong password.")
 	public void login_Failure() throws IOException
 	{
 		try {

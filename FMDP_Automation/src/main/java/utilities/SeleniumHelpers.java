@@ -17,6 +17,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.io.Files;
 
+import io.qameta.allure.Step;
+
 public class SeleniumHelpers 
 {
 	WebDriver driver;
@@ -37,6 +39,7 @@ public class SeleniumHelpers
 	
 	
 	//Navigation
+	@Step("Launch to Application: {url} in Browser under test.")
 	public void navigateToPage(String url)
 	{
 		driver.get(url);

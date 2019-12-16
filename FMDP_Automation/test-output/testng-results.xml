@@ -1,52 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
     <line>
-      <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with correct credentails]]>
+      <![CDATA[Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with incorrect credentails]]>
     </line>
     <line>
-      <![CDATA[Step 2 = Opening Menu & Navigating to Recipient Management and Open Create New Recipient screen]]>
+      <![CDATA[Step 2 = Verify the validation message displayed]]>
     </line>
     <line>
-      <![CDATA[Step 3 = On Create New Recipient page, adding details, click on Save button]]>
+      <![CDATA[Step 1 = Login to application]]>
     </line>
     <line>
-      <![CDATA[Step 4 = Searching for added Recipient record and verifying that it has correct details]]>
+      <![CDATA[Step 2 = Verify that user is logged in or not]]>
     </line>
     <line>
-      <![CDATA[Step 4 = Searching for added Recipient record and verifying that it has correct details]]>
+      <![CDATA[Step 3 = Click on change password link and performing change password]]>
     </line>
     <line>
-      <![CDATA[Step 1 = Editing details of added User record, click on Save button]]>
+      <![CDATA[Step 4 = Click on logout, and login as new password]]>
     </line>
     <line>
-      <![CDATA[Step 4 = Searching for added Recipient record and verifying that it has correct details]]>
+      <![CDATA[Step 6 = Click on change password and reverting to original password]]>
     </line>
     <line>
-      <![CDATA[Step 4 = Searching for added Recipient record and verifying that it has correct details]]>
-    </line>
-    <line>
-      <![CDATA[Step 1 = Searching for added recipient and inactivating recipient]]>
-    </line>
-    <line>
-      <![CDATA[Step 2 = Verify the inactive recipient is showing in Inactive recipient list]]>
-    </line>
-    <line>
-      <![CDATA[Step 1 = Searching for added & inactivated recipient and Deleting it]]>
-    </line>
-    <line>
-      <![CDATA[Step 2 = Verify the deleted recipient record is not present, it display on screen after select 'Include deleted records' option]]>
-    </line>
-    <line>
-      <![CDATA[Step 3 = Verify the deleted recipient record is not present, after uncheck 'Include deleted records' option]]>
+      <![CDATA[Step 7 = Verify that user is logged in or not]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="108954" started-at="2019-04-16T13:56:44Z" finished-at="2019-04-16T13:58:33Z">
+  <suite name="Default suite" duration-ms="45755" started-at="2019-12-04T10:04:31Z" finished-at="2019-12-04T10:05:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="108954" started-at="2019-04-16T13:56:44Z" finished-at="2019-04-16T13:58:33Z">
-      <class name="AER.FMDP_Automation.tests.supplier.SupplierTests">
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:AER.FMDP_Automation.tests.supplier.SupplierTests@5ea434c8]" name="setUp" is-config="true" duration-ms="9548" started-at="2019-04-16T13:56:44Z" finished-at="2019-04-16T13:56:54Z">
+    <test name="Default test" duration-ms="45755" started-at="2019-12-04T10:04:31Z" finished-at="2019-12-04T10:05:17Z">
+      <class name="AER.FMDP_Automation.tests.login.LoginTests">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@9597028]" name="setUp" is-config="true" duration-ms="13102" started-at="2019-12-04T10:04:31Z" finished-at="2019-12-04T10:04:45Z">
           <params>
             <param index="0">
               <value>
@@ -62,82 +47,51 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.supplier.SupplierTests@5ea434c8]" name="beforeMethod" is-config="true" duration-ms="5" started-at="2019-04-16T13:56:54Z" finished-at="2019-04-16T13:56:54Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@9597028]" name="beforeMethod" is-config="true" duration-ms="4" started-at="2019-12-04T10:04:45Z" finished-at="2019-12-04T10:04:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="supplier_Add()[pri:1, instance:AER.FMDP_Automation.tests.supplier.SupplierTests@5ea434c8]" name="supplier_Add" duration-ms="25390" started-at="2019-04-16T13:56:54Z" finished-at="2019-04-16T13:57:19Z">
+        <test-method status="PASS" signature="login_Failure()[pri:1, instance:AER.FMDP_Automation.tests.login.LoginTests@9597028]" name="login_Failure" duration-ms="3028" started-at="2019-12-04T10:04:45Z" description="Invalid Login Scenario with wrong username and password." finished-at="2019-12-04T10:04:48Z">
           <reporter-output>
             <line>
-              <![CDATA[Step 1 = Login to application at : http://172.25.50.64/account/login.aspx and loging in with correct credentails]]>
+              <![CDATA[Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with incorrect credentails]]>
             </line>
             <line>
-              <![CDATA[Step 2 = Opening Menu & Navigating to Recipient Management and Open Create New Recipient screen]]>
-            </line>
-            <line>
-              <![CDATA[Step 3 = On Create New Recipient page, adding details, click on Save button]]>
-            </line>
-            <line>
-              <![CDATA[Step 4 = Searching for added Recipient record and verifying that it has correct details]]>
-            </line>
-            <line>
-              <![CDATA[Step 4 = Searching for added Recipient record and verifying that it has correct details]]>
+              <![CDATA[Step 2 = Verify the validation message displayed]]>
             </line>
           </reporter-output>
-        </test-method> <!-- supplier_Add -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.supplier.SupplierTests@5ea434c8]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2019-04-16T13:57:19Z" finished-at="2019-04-16T13:57:19Z">
+        </test-method> <!-- login_Failure -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@9597028]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2019-12-04T10:04:48Z" finished-at="2019-12-04T10:04:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="supplier_Update()[pri:2, instance:AER.FMDP_Automation.tests.supplier.SupplierTests@5ea434c8]" name="supplier_Update" duration-ms="46287" started-at="2019-04-16T13:57:19Z" depends-on-methods="AER.FMDP_Automation.tests.supplier.SupplierTests.supplier_Add" finished-at="2019-04-16T13:58:06Z">
+        <test-method status="PASS" signature="login_ChangePassword()[pri:2, instance:AER.FMDP_Automation.tests.login.LoginTests@9597028]" name="login_ChangePassword" duration-ms="28047" started-at="2019-12-04T10:04:48Z" finished-at="2019-12-04T10:05:16Z">
           <reporter-output>
             <line>
-              <![CDATA[Step 1 = Editing details of added User record, click on Save button]]>
+              <![CDATA[Step 1 = Login to application]]>
             </line>
             <line>
-              <![CDATA[Step 4 = Searching for added Recipient record and verifying that it has correct details]]>
+              <![CDATA[Step 2 = Verify that user is logged in or not]]>
             </line>
             <line>
-              <![CDATA[Step 4 = Searching for added Recipient record and verifying that it has correct details]]>
+              <![CDATA[Step 3 = Click on change password link and performing change password]]>
+            </line>
+            <line>
+              <![CDATA[Step 4 = Click on logout, and login as new password]]>
+            </line>
+            <line>
+              <![CDATA[Step 6 = Click on change password and reverting to original password]]>
+            </line>
+            <line>
+              <![CDATA[Step 7 = Verify that user is logged in or not]]>
             </line>
           </reporter-output>
-        </test-method> <!-- supplier_Update -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.supplier.SupplierTests@5ea434c8]" name="beforeMethod" is-config="true" duration-ms="2" started-at="2019-04-16T13:58:06Z" finished-at="2019-04-16T13:58:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="supplier_Inactive()[pri:3, instance:AER.FMDP_Automation.tests.supplier.SupplierTests@5ea434c8]" name="supplier_Inactive" duration-ms="19028" started-at="2019-04-16T13:58:06Z" depends-on-methods="AER.FMDP_Automation.tests.supplier.SupplierTests.supplier_Update" finished-at="2019-04-16T13:58:25Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Step 1 = Searching for added recipient and inactivating recipient]]>
-            </line>
-            <line>
-              <![CDATA[Step 2 = Verify the inactive recipient is showing in Inactive recipient list]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- supplier_Inactive -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.supplier.SupplierTests@5ea434c8]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2019-04-16T13:58:25Z" finished-at="2019-04-16T13:58:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="supplier_Delete()[pri:4, instance:AER.FMDP_Automation.tests.supplier.SupplierTests@5ea434c8]" name="supplier_Delete" duration-ms="6430" started-at="2019-04-16T13:58:25Z" depends-on-methods="AER.FMDP_Automation.tests.supplier.SupplierTests.supplier_Inactive" finished-at="2019-04-16T13:58:31Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Step 1 = Searching for added & inactivated recipient and Deleting it]]>
-            </line>
-            <line>
-              <![CDATA[Step 2 = Verify the deleted recipient record is not present, it display on screen after select 'Include deleted records' option]]>
-            </line>
-            <line>
-              <![CDATA[Step 3 = Verify the deleted recipient record is not present, after uncheck 'Include deleted records' option]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- supplier_Delete -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:AER.FMDP_Automation.tests.supplier.SupplierTests@5ea434c8]" name="tearDown" is-config="true" duration-ms="1964" started-at="2019-04-16T13:58:31Z" finished-at="2019-04-16T13:58:33Z">
+        </test-method> <!-- login_ChangePassword -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@9597028]" name="tearDown" is-config="true" duration-ms="958" started-at="2019-12-04T10:05:16Z" finished-at="2019-12-04T10:05:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- AER.FMDP_Automation.tests.supplier.SupplierTests -->
+      </class> <!-- AER.FMDP_Automation.tests.login.LoginTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

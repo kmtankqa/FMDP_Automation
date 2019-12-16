@@ -187,4 +187,16 @@ public class SupplierSetupLib
 	}
 	
 	
+	public void supplier_copyRecord()
+	{
+		suppliermanagementadd.selectSupplierRecordRadio();
+		suppliermanagementadd.clickOnCopyFromExistingBtn();
+	}
+	
+	public void enterSupplierName(String suppliername)
+	{
+		suppliermanagementadd.enterSupplierName(suppliername);
+		help.btn_ClickOnSave();
+	}
+	
 }

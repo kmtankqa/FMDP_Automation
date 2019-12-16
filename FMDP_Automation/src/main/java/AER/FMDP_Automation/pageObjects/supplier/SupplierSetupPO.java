@@ -40,6 +40,12 @@ public class SupplierSetupPO
 		@FindBy(css=".user-options2 > input[value='Create New Supplier']")
 		private WebElement createNewSupplier;
 		
+		@FindBy(css=".user-options2 > input[value='Copy From Existing']")
+		private WebElement copyFromExisting;
+		
+		@FindBy(css="#griddata table tr:nth-of-type(2) td:nth-of-type(1)")
+		private WebElement selectFirstSupplierRadio;
+		
 		@FindBy(id="btnCopyFromExisting")
 		private WebElement copyExistingSupplier;
 		
@@ -54,7 +60,7 @@ public class SupplierSetupPO
 		private WebElement fareTypeNet;
 		
 		@FindBy(id="rdblstFareTypes_1")
-		private WebElement fareTypeTourop;
+		private WebElement fareTypeTourop;	
 		
 		@FindBy(id="rdblstFareTypes_2")
 		private WebElement fareTypeNego;
@@ -187,14 +193,40 @@ public class SupplierSetupPO
 		@FindBy(css=".supplierGridHeight:nth-of-type(2) > td input[src='../Images/icon-delete.png']")
 		public WebElement delete;
 		
-		
 	
-	// Supplier Details :
 		
+	// Supplier - Summary :
+	
 		public void clickOnCreateNewSupplierBtn()
 		{
 			createNewSupplier.click();
 		}
+		
+		public void clickOnCopyFromExistingBtn()
+		{
+			copyFromExisting.click();
+		}
+		
+		public void setSupplierStatus(String statusvalue)
+		{		
+			help.setToggleStaus(active, inactive, statusvalue);
+		}
+		
+		public void deleteSupplierRecord()
+		{
+			delete.click();
+		}
+		
+		public void selectSupplierRecordRadio()
+		{
+			if(!selectFirstSupplierRadio.isSelected())
+			{
+				selectFirstSupplierRadio.click();
+			}
+		}
+	
+		
+	// Supplier Details :
 				
 		public void enterSupplierName(String suppliername)
 		{
@@ -475,17 +507,6 @@ public class SupplierSetupPO
 			fileLocation.clear();
 			fileLocation.sendKeys(filelocationvalue);
 		}
-		
-	// Supplier - Summary :
-		
-		public void setSupplierStatus(String statusvalue)
-		{		
-			help.setToggleStaus(active, inactive, statusvalue);
-		}
-		
-		public void deleteSupplierRecord()
-		{
-			delete.click();
-		}
+	
 		
 }

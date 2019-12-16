@@ -178,6 +178,13 @@ public class TopNavigationLib
 		topnavigation.menu_ClickOnSupplierManagement();
 	}
 	
+	//Distribution Summary
+	
+	public void menu_ClickOnDistributionSummary()
+	{
+		topnavigation.menu_ClickOnDistributionSummary();
+	}
+	
 	
 	//Operations
 	
