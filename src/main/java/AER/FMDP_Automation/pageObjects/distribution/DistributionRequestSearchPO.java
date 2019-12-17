@@ -84,11 +84,11 @@ public class DistributionRequestSearchPO
 			
 		//Search Criteria :
 			
-			public void search_enterSupplierID(String supplierid)
+			/*public void search_enterSupplierID(String supplierid)
 			{
 				supplierId.clear();
 				supplierId.sendKeys(supplierid);
-			}
+			}*/
 		
 			public void search_enterSupplierName(String suppliername)
 			{

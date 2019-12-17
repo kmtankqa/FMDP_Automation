@@ -36,12 +36,12 @@ public class DistributionRequestSearchLib
 	//Search section
 	
 	
-		public void search_GetLastDistributionRequest()
+/*		public void search_GetLastDistributionRequest()
 		{
 			List<WebElement> activeColumns = driver.findElements(By.xpath("//td[text()='ACTIVE']"));
 			activeColumns.get(activeColumns.size()-1).click();
 		}
-		
+		*/
 	
 	
 	
@@ -59,7 +59,7 @@ public class DistributionRequestSearchLib
 		 * @param searchvalue				Search With Value	e.g. UN_20181115_185704, 21
 		 * @throws InterruptedException
 		 */
-		public void search_SearchDistributionRequestAndClick(String searchwith, String searchvalue) throws InterruptedException
+/*		public void search_SearchDistributionRequestAndClick(String searchwith, String searchvalue) throws InterruptedException
 		{
 			int i=0;
 			boolean isfirstitem = false;
@@ -111,10 +111,10 @@ public class DistributionRequestSearchLib
 	
 		
 		
-		/**
+		*//**
 		 * Only Search user by user id without verifying the first record
 		 * @param id User ID
-		 */
+		 *//*
 		public void search_DistributionRequestWithDistributionRequestId(String id)
 		{
 			searchpo.search_deselectCheckboxActiveDistributionRequest();
@@ -138,12 +138,12 @@ public class DistributionRequestSearchLib
 		
 		
 		
-		/**
+		*//**
 		 * Search User by username and verify first record in grid.
 		 * 
 		 * @param searchvalue			Search value	e.g. UN_20181115_185704
 		 * @throws InterruptedException
-		 */
+		 *//*
 		public void search_SearchActiveDistributionRequestWithDistributionRequestNameAndFareType(String searchvalue, String faretype) throws InterruptedException
 		{
 			searchpo.search_selectCheckboxActiveDistributionRequest();
@@ -192,7 +192,7 @@ public class DistributionRequestSearchLib
 				Assert.fail("FAIL : On DistributionRequest search, no search result appeared!");
 			}
 		}
-		
+		*/
 		
 		/**
 		 * Get no record text
@@ -295,9 +295,9 @@ public class DistributionRequestSearchLib
 		 * @param column
 		 * @return	data for given row and column
 		 */
-		public String getDistributionRequestGridData(int row, int column)
+	/*	public String getDistributionRequestGridData(int row, int column)
 		{
 			return searchpo.getDistributionRequestGridData(row, column);
 		}
-			
+			*/
 }

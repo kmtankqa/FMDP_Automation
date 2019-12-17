@@ -118,7 +118,7 @@ public class DistributionRequestTests
 
 			// Step 2 = Searching for edited Recipient record and verifying that it has correct details
 			Reporter.log("Step 4 = Searching for added Recipient record and verifying that it has correct details");
-			navigationlib.menu_ClickOnDistributionSummary();
+			/*navigationlib.menu_ClickOnDistributionSummary();
 			suppliersearch.search_SearchActiveSupplierWithSupplierNameAndFareType(suppliername, faretype_create);
 			
 			//Grid data :
