@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
+import io.qameta.allure.Step;
 import utilities.Constants;
 import utilities.SeleniumHelpers;
 
@@ -47,24 +48,27 @@ public class LoginPO
 		private List<WebElement> fieldValidatons;
 		
 		
+		@Step("Login Page: Enter the username.")
 		public void enterUsername(String username)
 		{
 			userName.clear();
 			userName.sendKeys(username);
 		}
-		
+				
+		@Step("Login Page: Enter the password.")
 		public void enterPassword(String password)
 		{
 			passWord.clear();
 			passWord.sendKeys(password);
 		}
 		
+		@Step("Login Page: Click on the Login button.")
 		public void clickOnLogin()
 		{
 			login.click();
 		}
 		
-		
+		@Step("Login Page: Get error message.")
 		public String getErrorMessage()
 		{
 			return errorMessage.getText().trim();

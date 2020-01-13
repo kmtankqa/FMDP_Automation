@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
+import io.qameta.allure.Step;
 import utilities.Constants;
 import utilities.JavaHelpers;
 import utilities.SeleniumHelpers;
@@ -127,7 +128,7 @@ public class CommonPO
 	
 		
 		//Common Buttons
-		
+		@Step("Click on the New button.")
 		public void footer_ClickOnNewButton()
 		{
 			selenium.waitTillElementIsVisible(newBtn);
@@ -136,6 +137,7 @@ public class CommonPO
 			waitTillPageLoaded();
 		}
 		
+		@Step("Click on the Done button.")
 		public void footer_ClickOnDone()
 		{
 			selenium.waitTillElementIsClickable(doneBtn);
@@ -144,6 +146,7 @@ public class CommonPO
 			waitTillPageLoaded();
 		}
 		
+		@Step("Click on the Back button.")
 		public void footer_ClickOnBack()
 		{
 			selenium.waitTillElementIsVisible(backBtn);
@@ -153,6 +156,7 @@ public class CommonPO
 			waitTillPageLoaded();
 		}
 		
+		@Step("Click on the Next button.")
 		public void footer_ClickOnNext()
 		{
 			selenium.waitTillElementIsVisible(nextBtn);
@@ -162,6 +166,7 @@ public class CommonPO
 			waitTillPageLoaded();
 		}
 
+		@Step("Click on the Previous button.")
 		public void footer_ClickOnPrevious()
 		{
 			selenium.waitTillElementIsVisible(prevBtn);
@@ -171,6 +176,7 @@ public class CommonPO
 			waitTillPageLoaded();
 		}
 		
+		@Step("Click on the Task button.")
 		public void footer_ClickOnTask()
 		{
 			selenium.waitTillElementIsVisible(taskBtn);
@@ -180,6 +186,7 @@ public class CommonPO
 			waitTillPageLoaded();
 		}
 		
+		@Step("Click on the Break button.")
 		public void footer_ClickOnBreak()
 		{
 			selenium.waitTillElementIsVisible(breakBtn);
@@ -189,6 +196,7 @@ public class CommonPO
 			waitTillPageLoaded();
 		}
 		
+		@Step("Click on the OK button on Error message popup.")
 		public void popup_ClickOnErrorOk()
 		{
 			selenium.waitTillElementIsVisible(errorOkBtn);
@@ -197,6 +205,7 @@ public class CommonPO
 			errorOkBtn.click();
 		}
 		
+		@Step("Click on the OK button on Success message popup.")
 		public void popup_ClickOnSuccessOk()
 		{
 			selenium.waitTillElementIsVisible(successOkBtn);
@@ -207,6 +216,7 @@ public class CommonPO
 
 		}
 		
+		@Step("Click on the Save button.")
 		public void btn_ClickOnSave()
 		{
 			selenium.waitTillElementIsVisible(saveBtn);
@@ -215,6 +225,7 @@ public class CommonPO
 			saveBtn.click();
 		}
 		
+		@Step("Click on the Cancel button.")
 		public void btn_ClickOnCancel()
 		{
 			selenium.waitTillElementIsVisible(cancelBtn);
@@ -223,6 +234,7 @@ public class CommonPO
 			cancelBtn.click();
 		}
 		
+		@Step("Click on the Search button.")
 		public void btn_ClickOnSearch()
 		{
 			selenium.waitTillElementIsVisible(searchBtn);
@@ -230,7 +242,8 @@ public class CommonPO
 			selenium.pageScrollInView(searchBtn);
 			searchBtn.click();
 		}
-				
+
+		@Step("Click on the Reset button")
 		public void btn_ClickOnReset()
 		{
 			selenium.waitTillElementIsVisible(resetBtn);
@@ -239,6 +252,7 @@ public class CommonPO
 			resetBtn.click();
 		}
 		
+		@Step("Click on the YES Button on confirmation message popup.")
 		public void popup_ClickOnConfirmationYes()
 		{
 			selenium.waitTillElementIsVisible(yesBtn);
@@ -247,6 +261,7 @@ public class CommonPO
 			yesBtn.click();
 		}
 		
+		@Step("Click on the NO Button on confirmation message popup.")
 		public void popup_ClickOnConfirmationNo()
 		{
 			selenium.waitTillElementIsVisible(noBtn);
@@ -255,6 +270,7 @@ public class CommonPO
 			noBtn.click();
 		}
 		
+		@Step("Select the Include Delete Record checkbox.")
 		public void checkbox_includeDeleteRecord()
 		{
 			selenium.waitTillElementIsVisible(chkboxIncludeDeleteRecord);
@@ -333,6 +349,7 @@ public class CommonPO
 		
 		
 		//Toggle status
+		@Step("Set job status vlaue to {3}")
 		public void setToggleStaus(WebElement active, WebElement inactive, String statusvalue)
 		{
 			if (statusvalue.contains("Active"))

@@ -1,0 +1,402 @@
+<html>
+<head>
+<title>TestNG:  RunningOnChrome</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>RunningOnChrome</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>23/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Jan 09 13:40:27 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>268 seconds (268112 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests.generalSetting_Add()'><b>generalSetting_Add</b><br>Test class: AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests<br/>
+<a href="#Output-593560228" onClick='toggleBox("Output-593560228", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-593560228" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-593560228">
+Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with correct credentails<br/>
+Step 2 = Opening Menu & Navigating to Settings > General Settings<br/>
+Step 3 = On General Settings page, adding details, uploading SFTP key and click on Save button<br/>
+Step 4 = Searching for added general settings details and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>34</td>
+<td>AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@2e8ab815</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests2.generalSetting_Add()'><b>generalSetting_Add</b><br>Test class: AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests2<br/>
+<a href="#Output-1298333467" onClick='toggleBox("Output-1298333467", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1298333467" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1298333467">
+Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with correct credentails<br/>
+Step 2 = Opening Menu & Navigating to Settings > General Settings<br/>
+Step 3 = On General Settings page, adding details, uploading SFTP key and click on Save button<br/>
+Step 4 = Searching for added general settings details and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>36</td>
+<td>AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests2@d1f74b8</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests.generalSetting_Update()'><b>generalSetting_Update</b><br>Test class: AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests<br/>
+<a href="#Output-961407750" onClick='toggleBox("Output-961407750", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-961407750" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-961407750">
+Step 1 = Editing added generate settings details<br/>
+Step 2 = Searching for configured general settings and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>22</td>
+<td>AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests@2e8ab815</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests2.generalSetting_Update()'><b>generalSetting_Update</b><br>Test class: AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests2<br/>
+<a href="#Output-1646606555" onClick='toggleBox("Output-1646606555", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1646606555" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1646606555">
+Step 1 = Editing added generate settings details<br/>
+Step 2 = Searching for configured general settings and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>22</td>
+<td>AER.FMDP_Automation.tests.settings.generalSettings.GeneralSettingsTests2@d1f74b8</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.login.LoginTests.login_ChangePassword()'><b>login_ChangePassword</b><br>Test class: AER.FMDP_Automation.tests.login.LoginTests<br>Test method: Change password and login with updated password.<br/>
+<a href="#Output-1571580699" onClick='toggleBox("Output-1571580699", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1571580699" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1571580699">
+Step 1 = Login to application<br/>
+Step 2 = Verify that user is logged in or not<br/>
+Step 3 = Click on change password link and performing change password<br/>
+Step 4 = Click on logout, and login as new password<br/>
+Step 6 = Click on change password and reverting to original password<br/>
+Step 7 = Verify that user is logged in or not<br/>
+</div>
+</td>
+<td></td>
+<td>33</td>
+<td>AER.FMDP_Automation.tests.login.LoginTests@2f3c6ac4</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.login.LoginTests.login_Failure()'><b>login_Failure</b><br>Test class: AER.FMDP_Automation.tests.login.LoginTests<br>Test method: Invalid Login Scenario with wrong username and password.<br/>
+<a href="#Output-1599429977" onClick='toggleBox("Output-1599429977", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1599429977" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1599429977">
+Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with incorrect credentails<br/>
+Step 2 = Verify the validation message displayed<br/>
+</div>
+</td>
+<td></td>
+<td>9</td>
+<td>AER.FMDP_Automation.tests.login.LoginTests@2f3c6ac4</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests.mnSetting_Add()'><b>mnSetting_Add</b><br>Test class: AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests<br/>
+<a href="#Output-1491346909" onClick='toggleBox("Output-1491346909", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1491346909" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1491346909">
+Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with correct credentails<br/>
+Step 2 = Opening Menu & Navigating to Settings > M & N Settings<br/>
+Step 3 = On Monitoring & Notification Settings page, adding details, click on Save button<br/>
+Step 4 = Searching for added Monitoring & Notification settings details and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>38</td>
+<td>AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests@67af833b</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests2.mnSetting_Add()'><b>mnSetting_Add</b><br>Test class: AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests2<br/>
+<a href="#Output-633606708" onClick='toggleBox("Output-633606708", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-633606708" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-633606708">
+Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with correct credentails<br/>
+Step 2 = Opening Menu & Navigating to Settings > M & N Settings<br/>
+Step 3 = On Monitoring & Notification Settings page, adding details, click on Save button<br/>
+Step 4 = Searching for added Monitoring & Notification settings details and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>40</td>
+<td>AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests2@41394595</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests.mnSetting_Update()'><b>mnSetting_Update</b><br>Test class: AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests<br/>
+<a href="#Output-244337671" onClick='toggleBox("Output-244337671", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-244337671" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-244337671">
+Step 1 = Editing added generate settings details<br/>
+Step 2 = Searching for edited general settings details and verifying that it has correct<br/>
+</div>
+</td>
+<td></td>
+<td>23</td>
+<td>AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests@67af833b</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests2.mnSetting_Update()'><b>mnSetting_Update</b><br>Test class: AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests2<br/>
+<a href="#Output-1038064075" onClick='toggleBox("Output-1038064075", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1038064075" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1038064075">
+Step 1 = Editing added generate settings details<br/>
+Step 2 = Searching for edited general settings details and verifying that it has correct<br/>
+</div>
+</td>
+<td></td>
+<td>17</td>
+<td>AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests2@41394595</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.recipient.RecipientTests.recipient_Add()'><b>recipient_Add</b><br>Test class: AER.FMDP_Automation.tests.recipient.RecipientTests<br/>
+<a href="#Output-663577988" onClick='toggleBox("Output-663577988", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-663577988" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-663577988">
+Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with correct credentails<br/>
+Step 2 = Opening Menu & Navigating to Recipient Management and Open Create New Recipient screen<br/>
+Step 3 = On Create New Recipient page, adding details, click on Save button<br/>
+Step 4 = Searching for added Recipient record and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>29</td>
+<td>AER.FMDP_Automation.tests.recipient.RecipientTests@21a5fd96</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.recipient.RecipientTests.recipient_Delete()'><b>recipient_Delete</b><br>Test class: AER.FMDP_Automation.tests.recipient.RecipientTests<br/>
+<a href="#Output-112971970" onClick='toggleBox("Output-112971970", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-112971970" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-112971970">
+Step 1 = Searching for added & inactivated recipient and Deleting it<br/>
+Step 2 = Verify the deleted recipient record is not present, it display on screen after select 'Include deleted records' option<br/>
+Step 3 = Verify the deleted recipient record is not present, after uncheck 'Include deleted records' option<br/>
+</div>
+</td>
+<td></td>
+<td>8</td>
+<td>AER.FMDP_Automation.tests.recipient.RecipientTests@21a5fd96</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.recipient.RecipientTests.recipient_Inactive()'><b>recipient_Inactive</b><br>Test class: AER.FMDP_Automation.tests.recipient.RecipientTests<br/>
+<a href="#Output-1204727777" onClick='toggleBox("Output-1204727777", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1204727777" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1204727777">
+Step 1 = Searching for added recipient and inactivating recipient<br/>
+Step 2 = Verify the inactive recipient is showing in Inactive recipient list<br/>
+</div>
+</td>
+<td></td>
+<td>54</td>
+<td>AER.FMDP_Automation.tests.recipient.RecipientTests@21a5fd96</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.recipient.RecipientTests.recipient_Update()'><b>recipient_Update</b><br>Test class: AER.FMDP_Automation.tests.recipient.RecipientTests<br/>
+<a href="#Output-1864792883" onClick='toggleBox("Output-1864792883", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1864792883" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1864792883">
+Step 1 = Editing details of added User record, click on Save button<br/>
+Step 4 = Searching for added Recipient record and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>25</td>
+<td>AER.FMDP_Automation.tests.recipient.RecipientTests@21a5fd96</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.supplier.SupplierTests.supplier_Add()'><b>supplier_Add</b><br>Test class: AER.FMDP_Automation.tests.supplier.SupplierTests<br/>
+<a href="#Output-1858241491" onClick='toggleBox("Output-1858241491", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1858241491" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1858241491">
+Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with correct credentails<br/>
+Step 2 = Opening Menu & Navigating to Recipient Management and Open Create New Recipient screen<br/>
+Step 3 = On Create New Recipient page, adding details, click on Save button<br/>
+Step 4 = Searching for added Recipient record and verifying that it has correct details<br/>
+Step 4 = Searching for added Recipient record and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>29</td>
+<td>AER.FMDP_Automation.tests.supplier.SupplierTests@5769e7ae</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.supplier.SupplierTests.supplier_Copy()'><b>supplier_Copy</b><br>Test class: AER.FMDP_Automation.tests.supplier.SupplierTests<br/>
+<a href="#Output-62075269" onClick='toggleBox("Output-62075269", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-62075269" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-62075269">
+Step 1 = Search existing record and Copy supplier, click on Save button<br/>
+Step 2 = Searching for Copied Recipient record and verifying that it is added successfully<br/>
+Step 3 = Searching for Copied Recipient record and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>15</td>
+<td>AER.FMDP_Automation.tests.supplier.SupplierTests@5769e7ae</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.supplier.SupplierTests.supplier_Delete()'><b>supplier_Delete</b><br>Test class: AER.FMDP_Automation.tests.supplier.SupplierTests<br/>
+<a href="#Output-1479161096" onClick='toggleBox("Output-1479161096", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1479161096" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1479161096">
+Step 1 = Searching for added & inactivated recipient and Deleting it<br/>
+Step 2 = Verify the deleted recipient record is not present, it display on screen after select 'Include deleted records' option<br/>
+Step 3 = Verify the deleted recipient record is not present, after uncheck 'Include deleted records' option<br/>
+</div>
+</td>
+<td></td>
+<td>4</td>
+<td>AER.FMDP_Automation.tests.supplier.SupplierTests@5769e7ae</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.supplier.SupplierTests.supplier_Inactive()'><b>supplier_Inactive</b><br>Test class: AER.FMDP_Automation.tests.supplier.SupplierTests<br/>
+<a href="#Output-181038817" onClick='toggleBox("Output-181038817", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-181038817" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-181038817">
+Step 1 = Searching for added recipient and inactivating recipient<br/>
+Step 2 = Verify the inactive recipient is showing in Inactive recipient list<br/>
+</div>
+</td>
+<td></td>
+<td>50</td>
+<td>AER.FMDP_Automation.tests.supplier.SupplierTests@5769e7ae</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.supplier.SupplierTests.supplier_Update()'><b>supplier_Update</b><br>Test class: AER.FMDP_Automation.tests.supplier.SupplierTests<br/>
+<a href="#Output-1323969327" onClick='toggleBox("Output-1323969327", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1323969327" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1323969327">
+Step 1 = Editing details of added User record, click on Save button<br/>
+Step 4 = Searching for added Recipient record and verifying that it has correct details<br/>
+Step 4 = Searching for added Recipient record and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>18</td>
+<td>AER.FMDP_Automation.tests.supplier.SupplierTests@5769e7ae</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.user.UserTests.user_Add()'><b>user_Add</b><br>Test class: AER.FMDP_Automation.tests.user.UserTests<br/>
+<a href="#Output-1907551217" onClick='toggleBox("Output-1907551217", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1907551217" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1907551217">
+Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with correct credentails<br/>
+Step 2 = Opening Menu & Navigating to User Management and Open Create New User screen<br/>
+Step 3 = On Create New User page, adding details, click on Save button<br/>
+Step 4 = Searching for added User record and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>25</td>
+<td>AER.FMDP_Automation.tests.user.UserTests@3a0807b7</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.user.UserTests.user_Delete()'><b>user_Delete</b><br>Test class: AER.FMDP_Automation.tests.user.UserTests<br/>
+<a href="#Output-721014455" onClick='toggleBox("Output-721014455", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-721014455" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-721014455">
+Step 1 = Searching for added & inactivated user and Deleting it<br/>
+Step 2 = Verify the deleted user record is not present, it display on screen after select 'Include deleted records' option<br/>
+Step 3 = Verify the inactive user can't do login<br/>
+</div>
+</td>
+<td></td>
+<td>11</td>
+<td>AER.FMDP_Automation.tests.user.UserTests@3a0807b7</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.user.UserTests.user_Inactive()'><b>user_Inactive</b><br>Test class: AER.FMDP_Automation.tests.user.UserTests<br/>
+<a href="#Output-1803248213" onClick='toggleBox("Output-1803248213", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1803248213" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1803248213">
+Step 1 = Searching for added user and inactivating user<br/>
+Step 2 = Verify the inactive user can't login<br/>
+</div>
+</td>
+<td></td>
+<td>52</td>
+<td>AER.FMDP_Automation.tests.user.UserTests@3a0807b7</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.user.UserTests.user_Update()'><b>user_Update</b><br>Test class: AER.FMDP_Automation.tests.user.UserTests<br/>
+<a href="#Output-194974026" onClick='toggleBox("Output-194974026", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-194974026" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-194974026">
+Step 1 = Editing details of added User record, click on Save button<br/>
+Step 2 = Searching for edited User record and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>23</td>
+<td>AER.FMDP_Automation.tests.user.UserTests@3a0807b7</td></tr>
+</table><p>
+</body>
+</html>

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Dec 04 15:34:31 IST 2019</td>
+<td>Started on:</td><td>Thu Jan 09 13:45:19 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>45 seconds (45755 ms)</td>
+<tr><td>Total time:</td><td>96 seconds (96480 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,35 +75,60 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='AER.FMDP_Automation.tests.login.LoginTests.login_ChangePassword()'><b>login_ChangePassword</b><br>Test class: AER.FMDP_Automation.tests.login.LoginTests<br/>
-<a href="#Output-1193398802" onClick='toggleBox("Output-1193398802", this, "Show output", "Hide output");'>Show output</a>
+<td title='AER.FMDP_Automation.tests.user.UserTests2.user_Add()'><b>user_Add</b><br>Test class: AER.FMDP_Automation.tests.user.UserTests2<br/>
+<a href="#Output-1132219173" onClick='toggleBox("Output-1132219173", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1193398802" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1193398802">
-Step 1 = Login to application<br/>
-Step 2 = Verify that user is logged in or not<br/>
-Step 3 = Click on change password link and performing change password<br/>
-Step 4 = Click on logout, and login as new password<br/>
-Step 6 = Click on change password and reverting to original password<br/>
-Step 7 = Verify that user is logged in or not<br/>
+<a href="#Output-1132219173" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1132219173">
+Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with correct credentails<br/>
+Step 2 = Opening Menu & Navigating to User Management and Open Create New User screen<br/>
+Step 3 = On Create New User page, adding details, click on Save button<br/>
+Step 4 = Searching for added User record and verifying that it has correct details<br/>
 </div>
 </td>
 <td></td>
-<td>28</td>
-<td>AER.FMDP_Automation.tests.login.LoginTests@9597028</td></tr>
+<td>12</td>
+<td>AER.FMDP_Automation.tests.user.UserTests2@200a26bc</td></tr>
 <tr>
-<td title='AER.FMDP_Automation.tests.login.LoginTests.login_Failure()'><b>login_Failure</b><br>Test class: AER.FMDP_Automation.tests.login.LoginTests<br>Test method: Invalid Login Scenario with wrong username and password.<br/>
-<a href="#Output-1985938863" onClick='toggleBox("Output-1985938863", this, "Show output", "Hide output");'>Show output</a>
+<td title='AER.FMDP_Automation.tests.user.UserTests2.user_Delete()'><b>user_Delete</b><br>Test class: AER.FMDP_Automation.tests.user.UserTests2<br/>
+<a href="#Output-952833542" onClick='toggleBox("Output-952833542", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1985938863" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1985938863">
-Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with incorrect credentails<br/>
-Step 2 = Verify the validation message displayed<br/>
+<a href="#Output-952833542" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-952833542">
+Step 1 = Searching for added & inactivated user and Deleting it<br/>
+Step 2 = Verify the deleted user record is not present, it display on screen after select 'Include deleted records' option<br/>
+Step 3 = Verify the inactive user can't do login<br/>
 </div>
 </td>
 <td></td>
-<td>3</td>
-<td>AER.FMDP_Automation.tests.login.LoginTests@9597028</td></tr>
+<td>9</td>
+<td>AER.FMDP_Automation.tests.user.UserTests2@200a26bc</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.user.UserTests2.user_Inactive()'><b>user_Inactive</b><br>Test class: AER.FMDP_Automation.tests.user.UserTests2<br/>
+<a href="#Output-267523139" onClick='toggleBox("Output-267523139", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-267523139" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-267523139">
+Step 1 = Searching for added user and inactivating user<br/>
+Step 2 = Verify the inactive user can't login<br/>
+</div>
+</td>
+<td></td>
+<td>47</td>
+<td>AER.FMDP_Automation.tests.user.UserTests2@200a26bc</td></tr>
+<tr>
+<td title='AER.FMDP_Automation.tests.user.UserTests2.user_Update()'><b>user_Update</b><br>Test class: AER.FMDP_Automation.tests.user.UserTests2<br/>
+<a href="#Output-582479659" onClick='toggleBox("Output-582479659", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-582479659" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-582479659">
+Step 1 = Editing details of added User record, click on Save button<br/>
+Step 2 = Searching for edited User record and verifying that it has correct details<br/>
+</div>
+</td>
+<td></td>
+<td>12</td>
+<td>AER.FMDP_Automation.tests.user.UserTests2@200a26bc</td></tr>
 </table><p>
 </body>
 </html>

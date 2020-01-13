@@ -3,15 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests">
+      <class name="AER.FMDP_Automation.tests.distribution.DistributionRequestTests">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="mnSetting_Update"/>
-          <include name="mnSetting_Add"/>
           <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="distribution_Add"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests -->
+      </class> <!-- AER.FMDP_Automation.tests.distribution.DistributionRequestTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

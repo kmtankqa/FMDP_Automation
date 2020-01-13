@@ -28,6 +28,7 @@ public class LoginLib
 	 * @param username username
 	 * @param password password
 	 */
+	@Step("Login to the application with the url: {0}, username: {1}, password: {2}, for method: {method} step...")
 	public void loginToApplication(String url, String username, String password)
 	{
 		selenium.navigateToPage(url);
@@ -41,7 +42,7 @@ public class LoginLib
 	 * @param username username
 	 * @param password password
 	 */
-	@Step("Login with the username: {0}, password: {}, for method: {method} step...")
+	@Step("Login with the username: {0}, password: {1}, for method: {method} step...")
 	public void loginToApplication(String username, String password)
 	{
 		loginpo.enterUsername(username);
@@ -53,6 +54,7 @@ public class LoginLib
 	 * Get validation message on login page
 	 * @return validation text
 	 */
+	@Step("Get validation message from login page on unsuccessful login attempt.")
 	public String getErrorMessage()
 	{
 		return loginpo.getErrorMessage();
@@ -62,6 +64,7 @@ public class LoginLib
 	 * To check whether error message displayed or not
 	 * @return true or false
 	 */
+	@Step("Verifying the error message displayed or not on login page.")
 	public boolean isErrorMessageDispalyed()
 	{
 		boolean b = true;

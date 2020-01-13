@@ -64,10 +64,10 @@ public class MNSettingsTests {
 	
 	
 	@BeforeClass
-	@Parameters({ "node", "browser" })
-	public void setUp(@Optional("local") String node, @Optional("chrome") String browser) throws Exception {
+	@Parameters({ "node", "browser", "headless" })
+	public void setUp(@Optional("local") String node, @Optional("chrome") String browser, @Optional("true") boolean headless) throws Exception {
 		drivermanager = new WebDriverManager();
-		driver = drivermanager.setUp(node, browser);
+		driver = drivermanager.setUp(node, browser, headless);
 		loginlib = new LoginLib(driver);
 		navigationlib = new TopNavigationLib(driver);
 		common = new CommonLib(driver);

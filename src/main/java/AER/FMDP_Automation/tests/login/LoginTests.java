@@ -43,11 +43,11 @@ public class LoginTests
 	
 	
 	@BeforeClass
-	@Parameters({"node", "browser"})
-	public void setUp(@Optional("local") String node, @Optional("chrome") String browser) throws Exception
+	@Parameters({"node", "browser", "headless"})
+	public void setUp(@Optional("local") String node, @Optional("chrome") String browser, @Optional("true") boolean headless) throws Exception
 	{
 		drivermanager = new WebDriverManager();
-		driver = drivermanager.setUp(node,browser); 
+		driver = drivermanager.setUp(node,browser,headless); 
 		loginlib = new LoginLib(driver);
 		navigationlib = new TopNavigationLib(driver);
 		common = new CommonLib(driver);
@@ -65,7 +65,7 @@ public class LoginTests
 	
 	/*Test 1 : Verify that user can't login with incorrect credentials */
 	@Test (priority = 1, description="Invalid Login Scenario with wrong username and password.")
-	@Description("Test Description: Login test with wrong username and wrong password.")
+	@Description("Test Description: Invalid Login test with wrong username and wrong password.")
 	public void login_Failure() throws IOException
 	{
 		try {
@@ -90,7 +90,8 @@ public class LoginTests
 	
 	
 	/*Test 2 : Verify that user can login/logout/change password successfully*/
-	@Test (priority = 2)
+	@Test (priority = 2, description="Change password and login with updated password.")
+	@Description("Test Description: Change password and login with updated password.")
 	public void login_ChangePassword() throws IOException
 	{
 		try 

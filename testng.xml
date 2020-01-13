@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="RegressionSuit"  thread-count="2" parallel="tests">
+<suite name="Regression Suite"  thread-count="2" parallel="tests">
 
   <test name="RunningOnChrome" thread-count="4" parallel='classes'>
 	  <parameter name="node" value="local" /> 		<!-- node value can be :  local or node url -->
+	  <parameter name="headless" value="true" />	<!-- headless value can be :  true or false> -->
 	  <parameter name="browser" value="chrome" />	<!-- browser value can be : chrome ,ie ,firefox -->
 	    <classes>
 		  <!--  <class name="au.com.shortcuts.live.tests.rosters.RostersActivityTests"/> 
@@ -31,6 +32,7 @@
 	       <class name="AER.FMDP_Automation.tests.settings.mnSettings.MNSettingsTests"/>
 	       <class name="AER.FMDP_Automation.tests.user.UserTests"/>
 	       <class name="AER.FMDP_Automation.tests.recipient.RecipientTests"/>
+	       <class name="AER.FMDP_Automation.tests.supplier.SupplierTests"/>
 	    </classes>
   </test>
   

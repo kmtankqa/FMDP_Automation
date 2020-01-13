@@ -1,37 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
     <line>
-      <![CDATA[Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with incorrect credentails]]>
+      <![CDATA[Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with correct credentails]]>
     </line>
     <line>
-      <![CDATA[Step 2 = Verify the validation message displayed]]>
+      <![CDATA[Step 2 = Opening Menu & Navigating to User Management and Open Create New User screen]]>
     </line>
     <line>
-      <![CDATA[Step 1 = Login to application]]>
+      <![CDATA[Step 3 = On Create New User page, adding details, click on Save button]]>
     </line>
     <line>
-      <![CDATA[Step 2 = Verify that user is logged in or not]]>
+      <![CDATA[Step 4 = Searching for added User record and verifying that it has correct details]]>
     </line>
     <line>
-      <![CDATA[Step 3 = Click on change password link and performing change password]]>
+      <![CDATA[Step 1 = Editing details of added User record, click on Save button]]>
     </line>
     <line>
-      <![CDATA[Step 4 = Click on logout, and login as new password]]>
+      <![CDATA[Step 2 = Searching for edited User record and verifying that it has correct details]]>
     </line>
     <line>
-      <![CDATA[Step 6 = Click on change password and reverting to original password]]>
+      <![CDATA[Step 1 = Searching for added user and inactivating user]]>
     </line>
     <line>
-      <![CDATA[Step 7 = Verify that user is logged in or not]]>
+      <![CDATA[Step 2 = Verify the inactive user can't login]]>
+    </line>
+    <line>
+      <![CDATA[Step 1 = Searching for added & inactivated user and Deleting it]]>
+    </line>
+    <line>
+      <![CDATA[Step 2 = Verify the deleted user record is not present, it display on screen after select 'Include deleted records' option]]>
+    </line>
+    <line>
+      <![CDATA[Step 3 = Verify the inactive user can't do login]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="45755" started-at="2019-12-04T10:04:31Z" finished-at="2019-12-04T10:05:17Z">
+  <suite name="Default suite" duration-ms="96480" started-at="2020-01-09T08:15:19Z" finished-at="2020-01-09T08:16:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="45755" started-at="2019-12-04T10:04:31Z" finished-at="2019-12-04T10:05:17Z">
-      <class name="AER.FMDP_Automation.tests.login.LoginTests">
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@9597028]" name="setUp" is-config="true" duration-ms="13102" started-at="2019-12-04T10:04:31Z" finished-at="2019-12-04T10:04:45Z">
+    <test name="Default test" duration-ms="96480" started-at="2020-01-09T08:15:19Z" finished-at="2020-01-09T08:16:56Z">
+      <class name="AER.FMDP_Automation.tests.user.UserTests2">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, boolean)[pri:0, instance:AER.FMDP_Automation.tests.user.UserTests2@200a26bc]" name="setUp" is-config="true" duration-ms="14397" started-at="2020-01-09T08:15:19Z" finished-at="2020-01-09T08:15:34Z">
           <params>
             <param index="0">
               <value>
@@ -43,55 +52,85 @@
                 <![CDATA[chrome]]>
               </value>
             </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@9597028]" name="beforeMethod" is-config="true" duration-ms="4" started-at="2019-12-04T10:04:45Z" finished-at="2019-12-04T10:04:45Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.user.UserTests2@200a26bc]" name="beforeMethod" is-config="true" duration-ms="55" started-at="2020-01-09T08:15:34Z" finished-at="2020-01-09T08:15:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="login_Failure()[pri:1, instance:AER.FMDP_Automation.tests.login.LoginTests@9597028]" name="login_Failure" duration-ms="3028" started-at="2019-12-04T10:04:45Z" description="Invalid Login Scenario with wrong username and password." finished-at="2019-12-04T10:04:48Z">
+        <test-method status="PASS" signature="user_Add()[pri:1, instance:AER.FMDP_Automation.tests.user.UserTests2@200a26bc]" name="user_Add" duration-ms="12530" started-at="2020-01-09T08:15:34Z" finished-at="2020-01-09T08:15:47Z">
           <reporter-output>
             <line>
-              <![CDATA[Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with incorrect credentails]]>
+              <![CDATA[Step 1 = Login to application at : http://172.25.50.55/account/login.aspx and loging in with correct credentails]]>
             </line>
             <line>
-              <![CDATA[Step 2 = Verify the validation message displayed]]>
+              <![CDATA[Step 2 = Opening Menu & Navigating to User Management and Open Create New User screen]]>
+            </line>
+            <line>
+              <![CDATA[Step 3 = On Create New User page, adding details, click on Save button]]>
+            </line>
+            <line>
+              <![CDATA[Step 4 = Searching for added User record and verifying that it has correct details]]>
             </line>
           </reporter-output>
-        </test-method> <!-- login_Failure -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@9597028]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2019-12-04T10:04:48Z" finished-at="2019-12-04T10:04:48Z">
+        </test-method> <!-- user_Add -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.user.UserTests2@200a26bc]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-01-09T08:15:47Z" finished-at="2020-01-09T08:15:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="login_ChangePassword()[pri:2, instance:AER.FMDP_Automation.tests.login.LoginTests@9597028]" name="login_ChangePassword" duration-ms="28047" started-at="2019-12-04T10:04:48Z" finished-at="2019-12-04T10:05:16Z">
+        <test-method status="PASS" signature="user_Update()[pri:2, instance:AER.FMDP_Automation.tests.user.UserTests2@200a26bc]" name="user_Update" duration-ms="12008" started-at="2020-01-09T08:15:47Z" depends-on-methods="AER.FMDP_Automation.tests.user.UserTests2.user_Add" finished-at="2020-01-09T08:15:59Z">
           <reporter-output>
             <line>
-              <![CDATA[Step 1 = Login to application]]>
+              <![CDATA[Step 1 = Editing details of added User record, click on Save button]]>
             </line>
             <line>
-              <![CDATA[Step 2 = Verify that user is logged in or not]]>
-            </line>
-            <line>
-              <![CDATA[Step 3 = Click on change password link and performing change password]]>
-            </line>
-            <line>
-              <![CDATA[Step 4 = Click on logout, and login as new password]]>
-            </line>
-            <line>
-              <![CDATA[Step 6 = Click on change password and reverting to original password]]>
-            </line>
-            <line>
-              <![CDATA[Step 7 = Verify that user is logged in or not]]>
+              <![CDATA[Step 2 = Searching for edited User record and verifying that it has correct details]]>
             </line>
           </reporter-output>
-        </test-method> <!-- login_ChangePassword -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:AER.FMDP_Automation.tests.login.LoginTests@9597028]" name="tearDown" is-config="true" duration-ms="958" started-at="2019-12-04T10:05:16Z" finished-at="2019-12-04T10:05:17Z">
+        </test-method> <!-- user_Update -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.user.UserTests2@200a26bc]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-01-09T08:15:59Z" finished-at="2020-01-09T08:15:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="user_Inactive()[pri:3, instance:AER.FMDP_Automation.tests.user.UserTests2@200a26bc]" name="user_Inactive" duration-ms="47102" started-at="2020-01-09T08:15:59Z" depends-on-methods="AER.FMDP_Automation.tests.user.UserTests2.user_Update" finished-at="2020-01-09T08:16:46Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Step 1 = Searching for added user and inactivating user]]>
+            </line>
+            <line>
+              <![CDATA[Step 2 = Verify the inactive user can't login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- user_Inactive -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:AER.FMDP_Automation.tests.user.UserTests2@200a26bc]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-09T08:16:46Z" finished-at="2020-01-09T08:16:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="user_Delete()[pri:4, instance:AER.FMDP_Automation.tests.user.UserTests2@200a26bc]" name="user_Delete" duration-ms="9098" started-at="2020-01-09T08:16:46Z" depends-on-methods="AER.FMDP_Automation.tests.user.UserTests2.user_Inactive" finished-at="2020-01-09T08:16:55Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Step 1 = Searching for added & inactivated user and Deleting it]]>
+            </line>
+            <line>
+              <![CDATA[Step 2 = Verify the deleted user record is not present, it display on screen after select 'Include deleted records' option]]>
+            </line>
+            <line>
+              <![CDATA[Step 3 = Verify the inactive user can't do login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- user_Delete -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:AER.FMDP_Automation.tests.user.UserTests2@200a26bc]" name="tearDown" is-config="true" duration-ms="674" started-at="2020-01-09T08:16:55Z" finished-at="2020-01-09T08:16:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- AER.FMDP_Automation.tests.login.LoginTests -->
+      </class> <!-- AER.FMDP_Automation.tests.user.UserTests2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

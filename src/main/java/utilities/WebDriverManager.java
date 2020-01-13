@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -22,7 +23,7 @@ public class WebDriverManager
 	private String iedriver_path = "lib/drivers/IEDriverServer.exe";
 	private String geckodriver_path= "lib/drivers/geckodriver.exe";
 	
-	public WebDriver setUp(String node, String browserName) throws Exception 
+	public WebDriver setUp(String node, String browserName, boolean headless) throws Exception 
 	{
 		browserName = browserName.toLowerCase();
 		
@@ -33,9 +34,10 @@ public class WebDriverManager
 			{
 				case "firefox" :
 					System.setProperty("webdriver.gecko.driver", geckodriver_path);
-					FirefoxOptions options = new FirefoxOptions();
-					options.setAcceptInsecureCerts(true);
-					driver = new FirefoxDriver(options);
+					FirefoxOptions firefoxOptions = new FirefoxOptions();
+					firefoxOptions.setHeadless(headless);
+					firefoxOptions.setAcceptInsecureCerts(true);
+					driver = new FirefoxDriver(firefoxOptions);
 					break;
 					
 				case "chrome":
@@ -46,6 +48,7 @@ public class WebDriverManager
 					chromePrefs.put("profile.default_content_settings.popups", 0);
 					chromePrefs.put("download.default_directory", Constants.currentDir + Constants.downloadFilePath);
 					ChromeOptions chromeOptions = new ChromeOptions();
+					chromeOptions.setHeadless(headless);  
 					chromeOptions.setExperimentalOption("prefs", chromePrefs);
 					
 					//Disable browser extension popup
@@ -62,6 +65,8 @@ public class WebDriverManager
 					
 				case "ie":
 					System.setProperty("webdriver.ie.driver",iedriver_path);
+					InternetExplorerOptions ieOptions = new InternetExplorerOptions();
+					ieOptions.setCapability(InternetExplorerDriver.INITIAL_BROWSER_URL,false);
 					driver = new InternetExplorerDriver();
 					break;
 				
